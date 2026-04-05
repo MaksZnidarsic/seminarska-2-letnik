@@ -32,19 +32,19 @@ Pokažemo intuiteven pristop k konstrukciji \textit{prve homološke grupe} skozi
 \section{Obesiti sliko}
 
 
-Problem zastavimo takole: predstavljajmo si neko prazno steno. Ta se nam zdi grozno dolgočasna in po pravici povedano dokaj depresivna, zato bi nanjo radi obesili sliko, saj te zelo hitro popestrijo ambient. Slika, ki jo imamo v mislih, je rahlo neprimerna, tako bi jo v primeru obiska radi hitro odstranili s stene. Najbolj efektiven način za to doseči, ki se ga spomnimo, je sliko hitro vreči na tla z odstranitvijo žebljev, nakar jo bo naš robotski sesalnik pospravil v smeti. Hitro vidimo, da sliko obesiti na običajen način ne pride v poštev, saj je žeblje zelo težko odstraniti, če se skrivajo za sliko. Biti bomo morali kreativni. Po nekaj pomirjujočega guncanja na gugalnici dobimo morda rahlo nenavadno idejo, da bi na sliko naprej pritrdili vrvico in jo nato prek te obesili na steno. Tako bi lahko žeblje ob primernem času brez večjih težav potegnili ven. A kako se tega lotiti? Sprva jo poskusimo obesiti z enim samim žebljem, a se zaradi močnega vetra, ki nam neprestano piha v naši sobi, ta ves čas maje. Kot vsaka razumska oseba zaključimo, da bo treba uporabiti vsaj dva žeblja. Tukaj pa seveda naletimo na naš poglavitni problem: \textit{Kako obesiti sliko na (vsaj) dva žeblja, tako da bo padla s stene, če odstranimo le enega?}
+Problem zastavimo takole: predstavljajmo si neko prazno steno. Ta se nam zdi grozno dolgočasna in po pravici povedano dokaj depresivna, zato bi nanjo radi obesili sliko — te zelo hitro popestrijo ambient. Nekateri bi sliko, ki jo imamo v mislih, lahko imeli za rahlo neprimerno, tako bi jo v primeru obiska radi hitro odstranili s stene, saj bi nas močno pekla vest, ko bi koga vznemirila. Najbolj efektiven način za to doseči, ki se ga spomnimo, je sliko hitro vreči na tla, tako da bi odstranili žeblje, nakar jo bo naš robotski sesalnik pospravil v smeti. Hitro vidimo, da sliko obesiti na običajen način ne pride v poštev, saj je žeblje zelo težko odstraniti, če se skrivajo za sliko. Biti bomo morali bolj kreativni! Po nekaj pomirjujočega guganja na gugalnici dobimo morda rahlo nenavadno idejo, da bi na sliko naprej pritrdili vrvico in jo nato prek te obesili na steno. Tako bi lahko žeblje ob primernem času brez večjih težav potegnili ven. A kako se tega lotiti? Sprva jo poskusimo obesiti z enim samim žebljem, a se zaradi močnega vetra, ki nam nenehno piha v sobi, ta ves čas maje. Kot vsaka razumska oseba zaključimo, da bo treba uporabiti vsaj dva žeblja. Tukaj pa seveda naletimo na naše poglavitno vprašanje: \textit{Kako obesiti sliko na (vsaj) dva žeblja, tako da bo padla s stene, ko odstranimo le enega izmed njiju?}
 
-Človek se v taki situaciji seveda najprej vpraša, ali je ta problem sploh smiselen. Mi se na take trivialnosti ne bomo ozirali in bomo našo pozornost raje usmerili k reševanju le-tega.
+Človek se v taki situaciji seveda najprej vpraša: Ali je ta problem sploh smiselen? Bi lahko naš čas namenili čemu bolj primernemu? Ali se lahko zrediš ob samem razmišljanju o krofih? Mi se na take trivialnosti ne bomo ozirali in našo pozornost raje usmerimo k reševanju zastavljenega problema. Poleg tega pa moramo v vsakem primeru še vedno najti izgovor za žeblje, ki so preostali zabiti v steno.
 
 
 \section{Poti v prostoru}
 
 
-Za začetek se lotimo kar modeliranja vrvi. Po glavi nam švigajo mnogo ideje, a se nam kljub mnogim prebedenim nočem ne uspe spomniti primerne definicije. Vrv je tako izmuzljiv objekt. Strmimo in strmimo v prazen list pripravljeni vreči puško v koruzo, ko se nam iz nenada skozi neko nerazložljivo proustovsko razodetje misli strnejo — hevreka! S sunkom odpremo vrata naše male sobice in v naglici stečemo na podstrešje, kjer hranimo sedaj že močno zaprašene zapiske s predavanj analize 1. Nestrpno listamo od vlage sprijete liste, dokler s kotičkom očesa ne zagledamo znanega zaznamka. Z nadlahtjo si obrišemo pot s čela in s tresočimi rokami obrnemo stran. To je to!
+Za začetek se lotimo kar modeliranja vrvi. Po glavi nam šviga morje idej, a se nam kljub mnogim prebedenim nočem ne uspe spomniti primerne definicije. Vrv je tako izmuzljiv objekt. Strmimo in strmimo v prazen list pripravljeni vreči puško v koruzo, ko se nam iz nenada skozi neko nerazložljivo proustovsko razodetje misli strnejo — hevreka! S sunkom odpremo vrata naše male sobice in v naglici stečemo na podstrešje, kjer hranimo sedaj že močno zaprašene zapiske s predavanj analize 1. Nestrpno listamo od vlage sprijete liste, dokler s kotičkom očesa ne zagledamo znanega zaznamka. Z nadlahtjo si obrišemo pot s čela in s tresočimi rokami obrnemo stran. To je to!
 
 
 \begin{definicija}
-    Naj bo $X$ topološki prostor. Zvezna preslikava $\alpha : [0, 1] \to X$ je \textit{pot} v $X$. Element $x = \alpha(0)$ imenujemo \textit{začetna točka}, $y = \alpha(1)$ pa \textit{končna točka} poti $\alpha$. Tedaj pravimo, da je $\alpha$ pot od $x$ do $y$.
+    Naj bo $X$ topološki prostor. Zvezna preslikava $\alpha : \mathbf{I} \to X$ je \textit{pot} v $X$. Element $x = \alpha(0)$ imenujemo \textit{začetna točka}, $y = \alpha(1)$ pa \textit{končna točka} poti $\alpha$. Tedaj pravimo, da je $\alpha$ pot od $x$ do $y$.
 \end{definicija}
 
 
@@ -52,7 +52,7 @@ Naše na novo odkrite zaklade po hitrem postopku prestavimo nazaj v delavno sobo
 
 
 \begin{definicija}
-    Naj bosta $\alpha$ in $\beta$ poti v $X$, za kateri velja $\alpha(1) = \beta(0)$. Z $\alpha\beta$ označimo preslikavo $[0, 1] \to X$ podano s predpisom
+    Naj bosta $\alpha$ in $\beta$ poti v $X$, za kateri velja $\alpha(1) = \beta(0)$. Z $\alpha\beta$ označimo preslikavo $\mathbf{I} \to X$ podano s predpisom
     \begin{align*}
         t \mapsto
         \begin{cases}
@@ -78,32 +78,36 @@ To pa ni vse, kajti ali smo res ustvarili novo vrv?
 \end{proof}
 
 
+Ker pa 
+
+
 \section{Homotopija}
 
 
-Kljub temu preblisku pa še vseeno nismo zadovoljni. Po še nekaj urah vnetega razmišljanja si končno priznamo, da nam brez fizičnega modela ne bo uspelo. Ker imamo abstraktnega razmišljanja že tako vrh glave, se odpravimo v skedenj po vrv, da bi si problem lahko dejansko konstruirali.
+Kljub temu preblisku pa še vseeno nismo zadovoljni. Po še nekaj urah vnetega razmišljanja si končno priznamo, da nam brez fizičnega modela ne bo uspelo. Ker imamo abstraktnega razmišljanja že tako vrh glave, se odpravimo iskat nekaj, s čimer bi si lahko pomagali.
 
-Naš skedenj je del zelo stare kmečke domačije. Barva se mu lušči, vrata niso več na mestu, na strehi manjka marsikak strešnik — na sploh je v dokaj slabem stanju. Tudi če zanj morda ne skrbimo najbolje, pa nam še vseeno dobro služi že vrsto let. Stopimo skozi vrata in se ozremo po nam dobro znanem prostoru. Na tramu na nasprotni strani sobe visi stara nacefrana vrv. Ta bo kot pripravljena, si rečemo in se odpravimo proti njen. V procesu dvigovanja vrvi s klina pa nas kot strela z jasnega zadane.
+Naš skedenj je del zelo stare kmečke domačije. Barva se mu lušči, vrata niso več na mestu, na strehi manjka marsikak strešnik — na sploh je v dokaj slabem stanju. Tudi če zanj morda ne skrbimo najbolje, pa nam še vseeno dobro služi že vrsto let. Stopimo skozi vrata in se ozremo po nam dobro znanem prostoru. Na tramu na nasprotni strani sobe visi stara nacefrana vrv. Ta bo kot nalašč, si rečemo in se odpravimo proti njen. V procesu dvigovanja vrvi s klina pa nas kot strela z jasnega zadane.
+%čaka izboljšavo
 
 
 \begin{definicija}
-    Naj bosta $X$ in $Y$ topološka prostora in $\phi, \psi : X \to Y$ zvezni. Preslikavi $\phi$ in $\psi$ sta \textit{homotopni} natanko tedaj, ko obstaja zvezna preslikava $h : X \times [0, 1] \to Y$, za katero velja, da je $h(x, 0) = \phi(x)$ in $h(x, 1) = \psi(x)$ za vse $x \in X$. Tedaj pišemo $\phi \simeq \psi$, preslikavi $h$ pa pravimo \textit{homotopija} med $\phi$ in $\psi$.
+    Naj bosta $X$ in $Y$ topološka prostora in $\phi, \psi : X \to Y$ zvezni. Preslikavi $\phi$ in $\psi$ sta \textit{homotopni} natanko tedaj, ko obstaja zvezna preslikava $h : X \times \mathbf{I} \to Y$, za katero velja, da je $h(x, 0) = \phi(x)$ in $h(x, 1) = \psi(x)$ za vse $x \in X$. Tedaj pišemo $\phi \simeq \psi$, preslikavi $h$ pa pravimo \textit{homotopija} med $\phi$ in $\psi$.
 
     Naj bo $A \subseteq X$. Če obstaja kakšna homotopija $h$, za katero velja $h(x, t) = \phi(x) = \psi(x)$ za vse $x \in A$, pravimo, da sta $\phi$ in $\psi$ \textit{homotopni relativno na} $A$. Pišemo $\phi \simeq \psi$ $(\text{rel } A)$.
 \end{definicija}
 
 
-Seveda, pa je zanima tudi sledeča ekvivalentna formulacija.
+Seveda pa je zanima tudi sledeča ekvivalentna formulacija.
 
 
 \begin{trditev}
-    Naj bosta $\phi, \psi : X \to Y$ zvezni. Preslikavi $\phi$ in $\psi$ sta homotopni natanko tedaj, ko obstaja pot med $\phi$ in $\psi$ v $C(X, Y)$.
+    Naj bosta $\phi, \psi : X \to Y$ zvezni. Preslikavi $\phi$ in $\psi$ sta homotopni natanko tedaj, ko obstaja pot med $\phi$ in $\psi$ v $\mathbf{C}(X, Y)$.
     \label{prop:homotopija-pot-v-zveznih-funkcijah}
 \end{trditev}
 
 
 \begin{proof}
-    Sledimo dokazu podanem v \cite{topologie-algebrique}. Puščeno kot vaja za bralca.
+    Sledimo dokazu podanem v \cite{topologie-algebrique}. Prepuščen bralcu.
 \end{proof}
 
 
@@ -113,7 +117,7 @@ Seveda, pa je zanima tudi sledeča ekvivalentna formulacija.
 
 
 \begin{proof}
-    Naj bodo $\phi, \psi, \sigma : X \to Y$ zvezne. Očitno velja $\phi \simeq \phi$. Naj bo $h$ homotopija med $\phi$ in $\psi$. Tedaj je $(x, s) \mapsto h(x, 1 - s)$ homotopija med $\psi$ in $\phi$. Nazadnje naj bo $\alpha$ pot od $\phi$ do $\psi$ in $\beta$ pot od $\psi$ do $\sigma$ v $C(X, Y)$, potem je $\alpha\beta$ po trditvi \ref{prop:produkt-poti-pot} pot od $\phi$ do $\sigma$, torej sta homotopni po trditvi \ref{prop:homotopija-pot-v-zveznih-funkcijah}.
+    Naj bodo $\phi, \psi, \sigma : X \to Y$ zvezne. Očitno velja $\phi \simeq \phi$. Naj bo $h$ homotopija med $\phi$ in $\psi$. Tedaj je $(x, s) \mapsto h(x, 1 - s)$ homotopija med $\psi$ in $\phi$. Nazadnje naj bo $\alpha$ pot od $\phi$ do $\psi$ in $\beta$ pot od $\psi$ do $\sigma$ v $\mathbf{C}(X, Y)$, potem je $\alpha\beta$ po trditvi \ref{prop:produkt-poti-pot} pot od $\phi$ do $\sigma$, torej sta homotopni po trditvi \ref{prop:homotopija-pot-v-zveznih-funkcijah}.
 \end{proof}
 
 
@@ -123,26 +127,10 @@ Seveda, pa je zanima tudi sledeča ekvivalentna formulacija.
 
 
 \begin{opomba}
-    Od tu naprej, ko govorimo o homotopnosti poti, mislimo homotopnost glede na konce le-teh. To konvencijo vpeljemo zaradi preprostosti tako notacije kot tudi terminologije. Kljub temu pa je pomembno poudariti, da se moramo tega na vsakem koraku zavedati, saj večina izrekov in trditev brez te predpostavke odpove.
+    Od tu naprej vedno, ko govorimo o homotopnosti poti, mislimo homotopnost glede na konce le-teh. To konvencijo vpeljemo zaradi preprostosti tako notacije, kot tudi terminologije. Kljub temu pa je pomembno poudariti, da se moramo tega na vsakem koraku zavedati, saj velika večina izrekov in trditev temelji na tej predpostavki.
 \end{opomba}
 
 
-\begin{trditev}
-    Naj bodo $\alpha, \beta, \gamma, \delta$ poti v $X$, za katere velja $\alpha \simeq \gamma$ in $\beta \simeq \delta$. Če $\alpha\beta$ in $\gamma\delta$ obstajata, potem sta homotopna.
-\end{trditev}
-
-
-\begin{proof}
-    Naj bo $h$ homotopija med $\alpha$ in $\gamma$ ter $k$ homotopija med $\beta$ in $\delta$. Lahko je preveriti, da je preslikava definirana s predpisom
-    \begin{align*}
-        (t, s) \mapsto
-        \begin{cases}
-            h(2t, s) & (t \in [0, 1/2]) \\
-            k(2t - 1, s) & (t \in [1/2, 1])
-        \end{cases}
-    \end{align*}
-    želena homotopija.
-\end{proof}
 
 
 \section{Fundamentalna grupa}
@@ -159,6 +147,7 @@ Seveda, pa je zanima tudi sledeča ekvivalentna formulacija.
         \item $\alpha x \simeq x \alpha \simeq \alpha$,
         \item $\alpha^{-1}\alpha \simeq \alpha\alpha^{-1} \simeq x$.
     \end{enumerate}
+    \label{lema:lastnosti-grupe}
 \end{lema}
 
 
@@ -167,22 +156,69 @@ Seveda, pa je zanima tudi sledeča ekvivalentna formulacija.
 \end{proof}
 
 
-\begin{izrek}
-    Naj bo $M$ mnogoterost in $x \in M$. Množica $Z(M, x) /\!\simeq$ opremljena z množenjem poti tvori strukturo grupe.
-    \label{thm:fundamentalna-grupa-je-grupa}
-\end{izrek}
+\begin{trditev}
+    Naj bo $M$ mnogoterost in $x \in M$. Množica $Z(M, x)$ opremljena z operacijo $(\alpha, \beta) \mapsto \alpha\beta$ tvori grupo.
+\end{trditev}
+
+
+\begin{proof}
+    Sledi trivialno po lemi \ref{lema:lastnosti-grupe}.
+\end{proof}
+
+
+\begin{trditev}
+    Naj bodo $\alpha, \beta, \gamma, \delta$ poti v $X$, za katere velja $\alpha \simeq \gamma$ in $\beta \simeq \delta$. Če $\alpha\beta$ in $\gamma\delta$ obstajata, potem sta homotopna.
+    \label{prop:produkt-poti-homotopen}
+\end{trditev}
+
+
+\begin{proof}
+    Naj bo $h$ homotopija med $\alpha$ in $\gamma$ ter $k$ homotopija med $\beta$ in $\delta$. Lahko je preveriti, da je preslikava definirana s predpisom
+    \begin{align*}
+        (t, s) \mapsto
+        \begin{cases}
+            h(2t, s) & (t \in [0, 1/2]) \\
+            k(2t - 1, s) & (t \in [1/2, 1])
+        \end{cases}
+    \end{align*}
+    želena homotopija.
+\end{proof}
 
 
 \begin{definicija}
-    Strukturo opredeljeno v izreku \ref{thm:fundamentalna-grupa-je-grupa} imenujemo \textit{fundamentalna grupa} mnogoterosti $M$ v točki $x$ in označimo s $\pi_1(M, x)$. V primeru, ko ta ni odvisna od izbire točke $x$, jo označimo $\pi_1(M)$.
+    Naj bo $M$ mnogoterost in $x \in M$. Grupi $Z(M, x) / \!\simeq$ pravimo \textit{prva homološka} ali \textit{fundamentalna grupa} mnogoterosti $M$ in jo označimo $\pi_1(M, x)$. Kadar je neodvisna od izbire bazne točke, jo označimo $\pi_1(M)$.
 \end{definicija}
 
 
+\begin{opomba}
+    Množica $Z(M, x) / \!\simeq$ res tvori grupo, saj je po trditvi \ref{prop:produkt-poti-homotopen} produkt poti vsklajen z relacijo homotopnosti.
+\end{opomba}
+
+
+\begin{trditev}
+    Fundamentalna grupa s potmi povezane mnogoterosti $M$ je neodvisna od izbire bazne točke.
+\end{trditev}
+
+
+\begin{proof}
+    Naj bosta $x, y \in M$ in $\sigma$ pot od $x$ do $y$ v $M$. Preslikava $\pi_1(M, x) \to \pi_1(M, y)$, $\alpha \mapsto \sigma^{-1}\alpha\sigma$ je izomorfizem.
+\end{proof}
+
+
+Vsi te izreki in dokazi pa človeka zlakotijo. Sestradani se z še zadnjimi preostalimi močmi privlečemo do shrambe, v kateri nas čakajo velike količine krofov vseh vrst in okusov. Police se šibijo pod njihovo težo, zrak dovolj gost, da bi ga lahko spili, pa je prežet z vonjem po sladkorju. Hlastno pograbimo najbližjega ter ga v enem samem ugrizu pospravimo. Prvega še dobro nismo pogoltnili in že prihaja naslednji, za njim pa še tretji. Goltamo in goltamo slastne biskvite. Ko pa se že zdi, da naše lakote ne bo nikoli konec, se nam nekako le uspe umiriti. Izmučeni se zvrnemo na tla in pri priči zaspimo pokriti s sladkorjem, marmelado in vsemi ostalimi stvarmi, ki se najdejo na slaščicah v shrambi.
+
+
 \begin{zgled}
+    Poglejmo si, kaj je fundamentalna grupa mnogoterosti $\mathbf{T}^2$. Naj bo $x \in \mathbf{T}^2$. Zgleda, kot da bo imela $\pi_1(\mathbf{T}^2, x)$ natanko dva neodvisna generatorja — zanko, ki gre po obodu luknje, in zanko, ki obkroži biskvit —, zato bo potrebno preveriti le, ali je komutativna tj. ali je izomorfna $\mathbf{Z}^2$ ali $F_2$.
+
+    Naj bosta $\alpha, \beta \in \pi_1(\mathbf{T}^2, x)$. Če si torus predstavljamo kot kvocient $\mathbf{I}^2$, je lahko videti, da velja $\alpha\beta\alpha^{-1}\beta^{-1} \simeq x$. Potem iz algebre 2 vemo, da mora biti $\pi_1(\mathbf{T}^2, x)$ komutativna. Posledično velja $\pi_1(\mathbf{T}^2, x) \cong \mathbf{Z}^2$.
 \end{zgled}
 
 
 \section{Obesimo sliko}
+
+
+Zbudimo se sladki in popolnoma prepoteni skoraj prilepljeni na leseni podenj. Ne vemo, ne kje smo, ne koliko je ura, ne kaj zdaj. Po malo in po malo se spravimo k sebi. Vstanemo. Vrti se nam, noge se nam tresejo; če se ne bi takoj oprli na polico, bi brez vsakršnega dvoma strmoglavili nazaj na tla. Trdno opirajoči se na zid se odpravimo v kuhinjo. Natočimo si kozarec vode in ga s tresočimi rokami spijemo. Strašen glavobol. Spomin se nam počasi vrača. Kaj za vraga je bilo v tistih krofih?
 
 
 \printbibliography
