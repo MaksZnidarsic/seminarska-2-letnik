@@ -24,15 +24,15 @@
 \section{Uvod}
 
 
-Pokažemo pristop k konstrukciji \textit{prve homotopske grupe} skozi primer matematičnega modeliranja problema obešanja slike (ang. picture hanging puzzle). Definicije in splošne izreke algebraične topologije povzamemo iz \cite{topologie-algebrique}, formulacija in rešitev problema pa sta predstavljeni v \cite{picture-hanging-puzzles}.
+Pokažemo pristop k konstrukciji \textit{prve homotopske grupe} skozi njeno kozmetično podobnost problemu obešanja slike (ang. picture hanging puzzle). Definicije in splošne izreke algebraične topologije povzamemo iz \cite{topologie-algebrique}, formulacija in rešitev problema pa sta predstavljeni v \cite{picture-hanging-puzzles}.
 
-V nadaljevanju privzamemo naslednje splošne oznake: z $\Z$ označujemo množico celih in z $\R$ množico realnih števil, z $\I$ označujemo enotski interval, s $\S^n$ $n$-sfero in s $\T^n$ $n$-torus. Poleg tega s $\F_n$ označimo prosto grupo reda $n$.
+V nadaljevanju privzamemo naslednje splošne oznake: z $\N$ označujemo množico naravnih, z $\Z$ množico celih in z $\R$ množico realnih števil, z $\I$ označujemo enotski interval, z $\B^n$ $n$-kroglo, s $\S^n$ $n$-sfero in s $\T^n$ $n$-torus. Poleg tega s $\F_n$ označimo prosto grupo reda $n$.
 
 
 \section{Obesiti sliko}
 
 
-Problem si zastavimo takole: imamo sliko pritrjeno na sklenjeno vrvico, nekaj žebljev in prazno steno. Sliko z uporabo vrvice in žebljev pritrdimo na steno, kot kaže slika \ref{mucka}. Izziv je vrvico napeljati, tako da, ko iz stene odstranimo kateregakoli izmed žebljev, slika pade.
+Problem si zastavimo takole: imamo sliko pritrjeno na sklenjeno vrvico, nekaj žebljev in prazno steno. Sliko z uporabo vrvice in žebljev pritrdimo na steno, kot kaže slika \ref{mucka}. \textit{Izziv je vrvico napeljati, tako da, ko iz stene odstranimo kateregakoli izmed žebljev, slika pade.}
 
 \begin{figure}[H]
     \centering
@@ -41,18 +41,29 @@ Problem si zastavimo takole: imamo sliko pritrjeno na sklenjeno vrvico, nekaj ž
     \label{mucka}
 \end{figure}
 
-Tukaj omenimo, da je to najpreprostejša oblika problema predstavljenega v \cite{picture-hanging-puzzles}. Tega posplošimo sledeče: denimo, da imamo v steni zabitih $n$ žebljev, tedaj zahtevamo, da slika pade natanko tedaj, ko iz nje odstranimo točno $k$ žebljev. Vendar, ker mi omenjeni problem uporabimo le v ilustrativne namene, se tukaj držimo enostavnejše verzije.
+Tukaj omenimo, da je to najpreprostejša oblika problema predstavljenega v \cite{picture-hanging-puzzles}. Tega bi lahko posplošili sledeče: denimo, da imamo v steni zabitih $n$ žebljev, tedaj zahtevamo, da slika pade natanko tedaj, ko iz nje odstranimo točno $k$ žebljev. Seveda pa se, ker naš problem uporabimo le v ilustrativne namene, tukaj držimo enostavnejše verzije.
+
+Kako pa se reševanja takega problema sploh lotiti?
+
+V tem prispevku to naredimo preko fundamentalne grupe $n$-krat preluknjane evklidske ravnine. Razlog za to je, da je fundamentalna grupa izvrstno orodje za opisovanje globalne strukture topoloških prostorov. To doseže s pomočjo zank v prostoru in ekvivalenčno relacijo homotopnosti med njimi, ki nam pove, na katerih elementih prostora se te "{}zataknejo". Lahko si predstavljamo, da je taka struktura odlična za opisovanje lukenj v dotičnem prostoru.
+
+Za nas bo to prišlo v poštev pri rigoroznem matematičnem modelu problema, saj, če si našo steno zamislimo kot evklidsko ravnino in vsako vrzel, ki smo jo vanjo dodali, kot enega izmed žebljev, naš problem opiše ravno to, kje se zanke — torej različna navijanja vrvi okoli žebljev — zataknejo.
 
 
 \section{Poti v prostoru}
 
 
-Pričnemo z modeliranjem vrvi. Ker bi steno radi opisali z evklidsko ravnino, se zdi najbolj naravna izbira za model vrvi kar pot v prostoru.
+Za začetek se spomnimo nekaj klasičnih definicij s področja splošne topologije, ki jih bomo potrebovali v nadaljevanju.
 
 
 \begin{definicija}
     Naj bo $X$ topološki prostor. Zvezna preslikava $\alpha : \I \to X$ je \textit{pot} v $X$. Element $x = \alpha(0)$ imenujemo \textit{začetna točka}, element $y = \alpha(1)$ pa \textit{končna točka} poti $\alpha$. Tedaj pravimo, da je $\alpha$ pot od $x$ do $y$.
+
+    Poti $\alpha$ v $X$ s staknjenima krajiščema pravimo \textit{zanka v točki} $x = \alpha(0) = \alpha(1)$. Z $Z(X, x)$ označimo \textit{množico vseh zank v točki} $x$.
 \end{definicija}
+
+
+V prihodnje se ukvarjamo predvsem z zankami, kljub temu pa vseeno večino trditev dokažemo v splošnem, saj to ne predstavlja praktično nobene dodatne kompleksnosti. Nadaljujemo z nekaj operacijami.
 
 
 \begin{definicija}
@@ -68,6 +79,9 @@ Pričnemo z modeliranjem vrvi. Ker bi steno radi opisali z evklidsko ravnino, se
 \end{definicija}
 
 
+Tukaj je vredno omeniti, da je stik zank spet zanka, saj je to dejstvo pomembno v nadaljevanju. Naslednja trditev nam zagotovi, da je stik poti dobro definiran.
+
+
 \begin{trditev}
     Naj bodo $x, y, z \in X$ in $\alpha$ od $x$ do $y$ in $\beta$ od $y$ do $z$ poti v $X$. Tedaj je $\alpha\beta$ pot v $X$ od $x$ do $z$.
     \label{prop:produkt-poti-pot}
@@ -77,6 +91,9 @@ Pričnemo z modeliranjem vrvi. Ker bi steno radi opisali z evklidsko ravnino, se
 \begin{proof}
     Preprost z uporabo elementarnih izrekov s področja splošne topologije.
 \end{proof}
+
+
+Poleg tega pa potrebujemo tudi sledečo involucijo.
 
 
 \begin{definicija}
@@ -89,14 +106,25 @@ Pričnemo z modeliranjem vrvi. Ker bi steno radi opisali z evklidsko ravnino, se
 \end{opomba}
 
 
+Ker konstantne poti igrajo pomembno vlogo v nadaljevanju, jih označujemo kar s točko, v katero slikajo. Torej naj bo $x \in X$, z $x$ označujemo preslikavo $\I \to X, s \mapsto x$.
+
+
 \section{Homotopija}
+
+
+Prišli smo do definicije, okoli katere se vse vrti.
 
 
 \begin{definicija}
     Naj bosta $X$ in $Y$ topološka prostora in $\phi, \psi : X \to Y$ zvezni. Preslikavi $\phi$ in $\psi$ sta \textit{homotopni} natanko tedaj, ko obstaja zvezna preslikava $h : X \times \I \to Y$, za katero velja, da je $h(x, 0) = \phi(x)$ in $h(x, 1) = \psi(x)$ za vse $x \in X$. Tedaj pišemo $\phi \simeq \psi$, preslikavi $h$ pa pravimo \textit{homotopija} med $\phi$ in $\psi$.
 
-    Naj bo $A \subseteq X$. Če obstaja kakšna homotopija $h$, za katero velja $h(x, t) = \phi(x) = \psi(x)$ za vse $x \in A$, pravimo, da sta $\phi$ in $\psi$ \textit{homotopni relativno na} $A$. Pišemo $\phi \simeq \psi$ $(\text{rel } A)$.
+    Naj bo $A \subseteq X$. Če obstaja kakšna homotopija $h$, za katero velja $h(x, y) = \phi(x) = \psi(x)$ za vse $x \in A$ in $y \in \I$, pravimo, da sta $\phi$ in $\psi$ \textit{homotopni relativno na} $A$. Pišemo $\phi \simeq \psi$ $(\rel A)$.
 \end{definicija}
+
+
+Homotopijo si najlažje predstavljamo kot zvezno transformacijo slike ene preslikave v drugo. To pomeni, da ni važno le, kako vsaka slika izgleda, temveč tudi, kje se nahaja. Kot primer si poglejmo kanonični inkluziji $\phi, \psi : \B^n \to \B^n \amalg \B^n$, kjer $\phi$ slika v prvo, $\psi$ pa v drugo kopijo $\B^n$. Kljub temu, da se preslikavi zdita v skoraj popolnoma enaki, pa še vseeno nista homotopni, saj nobene izmed žog ne moremo potisniti v drugo brez nenadnega skoka.
+
+Posebej zanimiva pa je tudi sledeča ekvivalentna definicija homotopnosti, saj na zelo preprost način opiše našo intuitivno predstavo o transformaciji slik v kodomeni. Kljub njeni lepoti jo vključimo predvsem, ker nam precej poenostavi dokaze nekaterih trditev.
 
 
 \begin{trditev}
@@ -110,14 +138,23 @@ Pričnemo z modeliranjem vrvi. Ker bi steno radi opisali z evklidsko ravnino, se
 \end{proof}
 
 
+Kot si za relacije zelo pogosto želimo, je tudi homotopnost ekvivalenčna relacija.
+
+
 \begin{trditev}
     Homotopnost je ekvivalenčna relacija.
+    \label{homotopnost-ekvivalencna-relacija}
 \end{trditev}
 
 
 \begin{proof}
-    Naj bodo $\phi, \psi, \sigma : X \to Y$ zvezne. Očitno velja $\phi \simeq \phi$. Naj bo $h$ homotopija med $\phi$ in $\psi$. Tedaj je $(x, y) \mapsto h(x, 1 - y)$ homotopija med $\psi$ in $\phi$. Nazadnje naj bo $\alpha$ pot od $\phi$ do $\psi$ in $\beta$ pot od $\psi$ do $\sigma$ v $\C(X, Y)$, potem je $\alpha\beta$ po trditvi \ref{prop:produkt-poti-pot} pot od $\phi$ do $\sigma$, torej sta homotopni po trditvi \ref{prop:homotopija-pot-v-zveznih-funkcijah}.
+    Naj bodo $\phi, \psi, \sigma : X \to Y$ zvezne. Očitno velja $\phi \simeq \phi$. Naj bo $\alpha$ pot od $\phi$ do $\psi$ v $\C(X, Y)$, $\alpha^{-1}$ je pot od $\psi$ do $\phi$. Nazadnje naj bo $\alpha$ pot od $\phi$ do $\psi$ in $\beta$ pot od $\psi$ do $\sigma$, potem je $\alpha\beta$ po trditvi \ref{prop:produkt-poti-pot} pot od $\phi$ do $\sigma$, torej sta homotopni po trditvi \ref{prop:homotopija-pot-v-zveznih-funkcijah}.
 \end{proof}
+
+
+Ker nas zanimajo predvsem poti, nas te popolnoma splošne definicije lahko pripeljejo le tako daleč. S tem v mislih moramo definicijo homotopnosti rahlo posplošiti, da bo primerna tudi za homotopnost poti. Problem namreč nastane predvsem v s potmi povezanih prostorih, saj so v njih vse poti homotopne. Recimo, da je $X$ povezan s potmi in $\alpha, \beta$ poti v $X$. Ker obstaja neka pot $\sigma$ od $\alpha(1)$ do $\beta(0)$, lahko homotopijo med njima konstuiramo tako, da pot $\alpha$ po tirnici $\sigma$ preprosto povlečemo na mesto poti $\beta$.
+
+Opisanemu problemu se zato izognemo s sledečo definicijo.
 
 
 \begin{definicija}
@@ -130,27 +167,27 @@ Pričnemo z modeliranjem vrvi. Ker bi steno radi opisali z evklidsko ravnino, se
 \end{opomba}
 
 
+S tem, da se omejimo na homotopije, ki krajišča poti ohranjajo primrznjena, tako ustvarimo relacijo z dokaj drugačno strukturo.
+
+
+\begin{zgled}
+    Poglejmo si tri poti v podprostoru ravnine, kot kaže slika \ref{homotopija-poti}. Ni se težko prepričati, da sta poti $\alpha$ in $\beta$ homotopni, saj si lahko predstavljamo, kako ena zdrsne v drugo, kot bi jo samo malo naravnali. Po drugi strani pa tako $\alpha$, kot tudi $\beta$, nista homotopni $\gamma$. Razlog je luknja v sredini prostora, ki prepreči katerikoli od njiju zdrseti na mesto poti $\gamma$. Da bi to dosegli, bi ju morali ali pretrgati ali pa v procesu transformacije začasno premakniti eno od krajišč, oba ta primera pa sta po definiciji homotopnosti poti nemogoča.
+
+    \begin{figure}[H]
+        \centering
+        \input{img/poti.tex}
+        \caption{Primer homotopnih in nehomotopnih poti v podprostoru evklidske ravnine.}
+        \label{homotopija-poti}
+    \end{figure}
+
+    Podobno sta si zanki $\alpha\gamma^{-1}$ in $\beta\gamma^{-1}$ homotopni, medtem ko si zanki $\alpha\beta^{-1}$ in $\alpha\gamma^{-1}$ nista. Razlog spet leži v luknji sredi prostora, saj le-ta zanki $\alpha\gamma^{-1}$ preprečuje, da bi se lahko zategnila v konstantno pot, zanka $\alpha\beta^{-1}$ pa nima nobene takšne omejitve.
+\end{zgled}
+
+
 \section{Fundamentalna grupa}
 
 
-\begin{definicija}
-    Naj bo $X$ topološki prostor in $x \in X$. \textit{Zanka} v $x$ je pot v $X$ od $x$ do $x$. Z $Z(X, x)$ označimo \textit{množico vseh zank v} $x$.
-\end{definicija}
-
-
-\begin{lema} Naj bo $x \in X$ in $\alpha, \beta, \gamma$ zanke v $x$.
-    \begin{enumerate}[(i)]
-        \item $(\alpha\beta)\gamma \simeq \alpha(\beta\gamma)$
-        \item $\alpha x \simeq x \alpha \simeq \alpha$,
-        \item $\alpha^{-1}\alpha \simeq \alpha\alpha^{-1} \simeq x$.
-    \end{enumerate}
-    \label{lastnosti-grupe}
-\end{lema}
-
-
-\begin{proof}
-    Naj bodo $\alpha, \beta, \gamma$ zanke v $x$.
-\end{proof}
+Sedaj, ko smo se seznanili s osnovami homotopije poti, pa nadaljujemo k konstrukciji fundamentalne grupe. To tvori prostor ekvivalenčnih razredov zank po relaciji homotopnosti skupaj z operacijo stika poti, zato se osredotočimo na nekaj lem, ki nam to konstrukcijo legitimirajo. Za začetek dokažemo, da je stik poti usklajen z relacijo homotopnosti, kar nam dovoli, da ga podaljšamo tudi na ekvivalenčne razrede.
 
 
 \begin{lema}
@@ -160,21 +197,34 @@ Pričnemo z modeliranjem vrvi. Ker bi steno radi opisali z evklidsko ravnino, se
 
 
 \begin{proof}
-    Naj bo $h$ homotopija med $\alpha$ in $\gamma$ ter $h'$ homotopija med $\beta$ in $\delta$. Lahko je preveriti, da je preslikava definirana s predpisom
-    \begin{align*}
-        (x, y) \mapsto
-        \begin{cases}
-            h(2x, y) & (x \in [0, 1/2]) \\
-            h'(2x - 1, y) & (x \in [1/2, 1])
-        \end{cases}
-    \end{align*}
-    želena homotopija.
+    Ker sta $\alpha$ in $\gamma$ homotopni, se ni težko prepričati, da sta tudi $\alpha\beta$ in $\gamma\beta$, saj v resnici potema dodajamo le primrznjen rep, ki na zveznost podaljšane homotopije ne more vplivati. Prav tako se na enak način prepričamo, da isto velja za $\gamma\beta$ in $\gamma\delta$. Po trditvi \ref{homotopnost-ekvivalencna-relacija} je homotopnost tranzitivna.
 \end{proof}
 
 
-\begin{trditev}
+Nadaljujemo z osnovnimi lastnostmi grupe.
+
+
+\begin{lema} Naj bo $x \in X$ in $\alpha, \beta, \gamma$ zanke v $x$.
+    \begin{enumerate}[(i)]
+        \item \label{lastnosti-grupe-1} $(\alpha\beta)\gamma \simeq \alpha(\beta\gamma)$
+        \item \label{lastnosti-grupe-2} $\alpha x \simeq x \alpha \simeq \alpha$,
+        \item \label{lastnosti-grupe-3} $\alpha^{-1}\alpha \simeq \alpha\alpha^{-1} \simeq x$.
+    \end{enumerate}
+    \label{lastnosti-grupe}
+\end{lema}
+
+
+\begin{proof}
+    Zaradi njune rutinske narave dokaza za \eqref{lastnosti-grupe-1} in \eqref{lastnosti-grupe-2} izpustimo. Za \eqref{lastnosti-grupe-3}, naj bo $\alpha$ zanka v $X$. Brez škode splošnosti se lahko omejimo na primer $\alpha\alpha^{-1} \simeq x$. Če si zamislimo, kako $\alpha\alpha^{-1}$ potuje v $X$, hitro opazimo, da kljub temu, da se točke $x$ dotakne vsaj trikrat, je tam fiksirana samo za $0$ in $1$. Tako lahko tisto nevidno zankico, ki nastane pri $1 / 2$, samo povlečemo nazaj po tirnici $\alpha$. V skladu z razmislekom definiramo preslikavo $h : \I^2 \to X, (s, t) \mapsto \alpha(s - s|2t - 1|)$, ki tvori homotopijo med $\alpha\alpha^{-1}$ in $x$.
+\end{proof}
+
+
+Vse te leme in definicije pa nas le pripeljejo do velikega izreka (velik je relativen pojem).
+
+
+\begin{izrek}
     Naj bo $X$ topološki prostor in $x \in X$. Množica $Z(X, x)/\!\!\simeq$ opremljena z operacijo $([\alpha], [\beta]) \mapsto [\alpha\beta]$ tvori grupo.
-\end{trditev}
+\end{izrek}
 
 
 \begin{proof}
@@ -182,34 +232,53 @@ Pričnemo z modeliranjem vrvi. Ker bi steno radi opisali z evklidsko ravnino, se
 \end{proof}
 
 
+In tako lahko končno definiramo.
+
+
 \begin{definicija}
     Naj bo $X$ topološki prostor in $x \in X$. Grupi $Z(X, x) / \!\!\simeq$ pravimo \textit{prva homotopska} ali \textit{fundamentalna grupa} topološkega prostora $X$ in jo označimo $\pi_1(X, x)$.
 \end{definicija}
 
 
+Preden se lotimo modeliranja, pa bi si bilo dobro dobiti še malo občutka za pravkar definirano strukturo. Pa si poglejmo še nekaj primerov fundamentalnih grup, ki pripadajo klasičnim mnogoterostim.
+
+
 \begin{zgled}
-    Fundamentalna grupa $\S^1$ je trivialna.
+    Fundamentalna grupa $\S^2$ je trivialna. Predstavljajmo si eno tistih žogic iz gumic. Gumico na površini lahko vedno vzamemo dol iz žogice, pri čemer je naprej napeta, potem pa se v procesu odstranjevanja počasi sprošča ob površini žoge, dokler se popolnoma ne sprosti in sama pade dol iz kugle.
+
+    Bolj matematično naj bo $\alpha$ neka zanka v $x \in \S^2$ in $y \in \S^2 \setminus \im \alpha$ neka točka. Predstavljajmo si, da sfero predremo tj. odstranimo $y$. Dobro znano je, da je $\S^2 \setminus \{y\} \approx \B^2$, naj bo $\phi : \S^2 \setminus \{y\} \to \B^2$ ta homeomorfizem. Predpostavimo lahko, da je $\phi(x) = 0$. Poleg tega je dokaj očitno, da velja $\id : \B^2 \to \B^2 \simeq \B^2 \to \B^2, s \mapsto 0$, tedaj homotopijo med njima označimo z $\psi$. Sedaj lahko definiramo preslikavo $h : \I^2 \to \S^2$ s predpisom $(s, t) \mapsto \phi(\psi(\alpha(s), t))$, ki je očitna homotopija med $\alpha$ in $x$.
 \end{zgled}
 
 
-\begin{zgled}
-    Poglejmo si, kaj je fundamentalna grupa mnogoterosti $\T^2$. Naj bo $x \in \T^2$. Zgleda, kot da je $\pi_1(\T^2, x)$ neskončna in ima natanko dva generatorja — zanko, ki gre po obodu luknje, in zanko, ki obkroži biskvit —, zato bo potrebno preveriti le, ali je komutativna tj. ali je izomorfna $\Z^2$ ali $\F_2$.
+Sedaj pa si poglejmo še nekoliko bolj zapleten prostor, saj nas že dobro daje lakota.
 
-    Naj bosta $\alpha, \beta$ generatorja $\pi_1(\T^2, x)$. Če si torus predstavljamo kot kvocient $\I^2$, je lahko videti, da velja $\alpha\beta\alpha^{-1}\beta^{-1} \simeq x$. Potem iz algebre 2 vemo, da mora biti $\pi_1(\T^2, x)$ komutativna. Posledično velja $\pi_1(\T^2, x) \cong \Z^2$.
+
+\begin{zgled}
+    Poglejmo si, kaj je fundamentalna grupa mnogoterosti $\T^2$. Naj bo $x \in \T^2$. Izgleda, kot da je $\pi_1(\T^2, x)$ neskončna in ima natanko dva generatorja — zanko, ki gre po obodu luknje, in zanko, ki obkroži biskvit —, zato bo potrebno preveriti le, ali je komutativna tj. ali je izomorfna $\Z^2$ ali $\F_2$.
+
+    \begin{figure}[H]
+        \centering
+        \input{img/krof.tex}
+        \caption{Generatorja fundamentalne grupe prostora $T^2$.}
+    \end{figure}
+
+    Naj bosta $\alpha, \beta$ generatorja $\pi_1(\T^2, x)$. Če si torus predstavljamo kot kvocient $\I^2$, je lahko videti, da velja $\alpha\beta\alpha^{-1}\beta^{-1} \simeq x$. Iz algebre 2 vemo, da mora biti torej $\pi_1(\T^2, x)$ komutativna. Posledično velja $\pi_1(\T^2, x) \cong \Z^2$.
 \end{zgled}
 
 
 \section{Obesimo sliko}
 
 
+Oboroženi z orodji algebraične topologije se le obrnemo proti modeliranju problema.
+
 \begin{zgled}
-    Poglejmo si model naše stene z uporabo evklidske ravnine. Pričnimo s prazno steno. Izberemo si točko $x \in \R^2$ — ta bo predstavljala našo sliko. Kot model vseh možnih načinov, na katere lahko na steno postavimo vrv, nam bo služila $Z(\R^2, x)$. Ker pa nam je vseeno, kako jo postavimo, saj se bo ta tako ali napela v trenutko, ko spustimo sliko, bo primernejša struktura kar $\pi_1(\R^2, x)$.
+    Kot že rečeno, si želimo za model stene uporabiti evklidsko ravnino. Naj bo $x \in \R^2$ in $S \subset \R^2 \setminus \{x\}$, za katero velja, da je $|S| = n$ za nek $n \in \N$. Izbrana točka $x$ nam bo služila kot mesto, na katerem je vrvica pritrjena na sliko, elementi $S$ predstavlja enega žeblje zabite v steno, za vrv pa bomo uporabili kar ekvivalenčni razred poti v prostoru pod relacijo homotopnosti kot že motivirano. S tako nastavljenim modelom je jasno, da bo slika padla, natanko takrat, ko bo naša vrv enaka ekvivalenčnemu razredu $[x]$, saj se takrat vrvica ni zataknila ob nobenega izmed žebljev. Torej našo steno opisuje grupa $G = \pi_1(\R^2 \setminus S)$.
 
-    Za model žebljev bomo uporabili luknje v ravnini, saj zanke, ki potujejo okoli ene izmed njih, niso homotopne $x$, torej slika ne bo padla. Naj bo $S \subset \R^2 \setminus \{x\}$ množica z $n$ elementi. Ni se težko prepričati, da izbira elementov $S$ nima vpliva na model. Seveda pa nas najbolj zanima $G = \pi_1(\R^2 \setminus S, x)$, ki modelira vse načine, na katere lahko obesimo sliko.
+    Grupa $G$ sigurno za vsak $s \in S$ vsebuje ekvivalenčni razred vseh zank, ki potujejo okoli $s$ natanko enkrat in ne obrokožijo nobenega drugega elementa. Taka ekvivalenčna razreda sta dva tj. naj bo $\alpha$ zanka kot zahtevano, potem sta $[\alpha]$ in $[\alpha^{-1}]$ iskana razreda. S preprostostjo v mislih ju označujemo kar s $s$ in $s^{-1}$. Vidimo, da je vsak element v $G$ možno napisati kot produkt teh osnovnih komponent. Sledi, da je $G = \{\prod_i a_i : a_i \in \bigcup_{s \in S} \{s, s^{-1} \} \}$. Intuitivno smo vsako možno navijanje vrvi zapisali s koraki, ki smo jih naredili, da smo ga ustvarili. Pokazali smo, da je možno $G$ zapisati kot množico vseh besed v $S$. Drugače rečeno velja $G \cong \F_n$.
 
-    Grupa $G$ bo za vsak $s \in S$ vsebovala ekvivalenčni razred vseh poti, ki gredo okoli $s$ in ne obrokožijo nobenega drugega elementa. Seveda pa sta taka ekvivalenčna razreda dva tj. naj bo $\alpha$ zanka kot zahtevano, potem sta $[\alpha]$ in $[\alpha^{-1}]$ iskana razreda. S preprostostjo v mislih ta dva elementa označujemo kar $s$ in $s^{-1}$. Lahko je videti, da je vsak element v $G$ možno napisati kot produkt teh osnovnih komponent. Sledi $G = \{\prod_i a_i : a_i \in \bigcup_{s \in S} \{s, s^{-1} \} \}$. Intuitivno smo vsako možno navijanje vrvi zapisali s koraki, ki smo jih morali narediti, da smo ga ustvarili. Kot smo pokazali, je možno $G$ zapisati kot množico vseh besed v $S$. Posledično velja, da je $G \cong \F_n$.
+    Preostane nam še opis odstranjevanja enega izmed žebljev. Naj bo $\alpha$ pot, ki potuje okoli točke $s \in S$ in nobene druge. Odstraniti žebelj pomeni odstraniti oviro — v našem primeru to pomeni zapolniti točko $s$, nakar bo $\alpha \simeq x$, torej bo slika padla. Ni nujno, da bo $\alpha$ vedno tako preprosta, po principu odstranjevanja ovire pa si še vedno želimo, da je po transformaciji prostora homotopna $x$.
 
-    Preostane nam še opis odstranjevanja enega izmed žebljev. Naj bo $\alpha$ pot, ki potuje okoli točke $s \in S$. Odstraniti žebelj pomeni odstraniti oviro — v našem primeru to pomeni zapolniti $s$, nakar bo $\alpha \simeq x$. Seveda pa ni nujno, da bo $\alpha$ tako preprosta, še vedno pa želimo, da je po transformaciji prostora homotopna $x$, saj to predstavlja padec slike. Torej za $s \in \F_n$ definirajmo $\phi_s : \F_n \to \F_n$ s predpisom
+    Pa to idejo formalizirajmo. Naj bo $\F_n = \langle S \rangle$. V skladu s povedanim za $s \in S$ definiramo preslikavo $\phi_s : \F_n \to \F_n$ s predpisom
     \begin{align*}
         t \mapsto
         \begin{cases}
@@ -217,23 +286,27 @@ Pričnemo z modeliranjem vrvi. Ker bi steno radi opisali z evklidsko ravnino, se
             t & (t \neq s)
         \end{cases},
     \end{align*}
-    kjer je $e$ identiteta in $t$ eden izmed generatorjev $\F_n$. Tako se vsa navijanja, ki padajo, ko odstranimo žebelj $s$, nahajajo v grupi $\ker \phi_s$. Torej rešitev našega problema leži v $\left(\bigcap_{s \in S} \ker \phi_s\right) \setminus \{e\}$.
+    kjer je $e$ identiteta $\F_n$ in $t \in S$. Vidimo, da preslikave $\phi_s$ opisujejo odstranjevanje enega izmed žebljev. Seveda pa je v takem stanju definicija $\phi_s$ zelo pomanjkljiva, saj bi z njo znali operirati le na generatorij, zato jo za preostale preprosto podaljšamo s predpisom $\phi_s(\prod_i a_i) = \prod_i \phi_s(a_i)$, kjer so $a_i \in S$. Preslikava $\phi_s$ je očitno homomorfizem grup.
+
+    Opazimo, da se vsa navijanja, ki padejo, ko odstranimo žebelj $s$, nahajajo v podgrupi $\ker \phi_s$, sledi, da bodo vse naše rešitve ležale ravno v preseku teh, saj so to točno vsa obešanja, ki padejo, ko odstranimo kateregakoli izmed žebljev. Torej je $\bigcap_{s \in S} \ker \phi_s$ množica rešitev problema obešanja slike.
     \label{konstrukcija-stene}
 \end{zgled}
 
 
-%Toliko časa in truda pa nam je vendarle uspelo; našli smo zelo preprost opis našega problema. To samo pokaže, česa vsega je človek zmožen, če si le dovoli razmišljati.
+Na tej točki pa nam preostane le še dokazati, da te rešitve res obstajajo.
 
 
 \begin{izrek}
-    Naj bo $S$ množica generatorjev $\F_n$ in preslikave $\phi_s$ kot definirane v zgledu \ref{konstrukcija-stene}. Podgrupa $\bigcap_{s \in S} \ker \phi_s$ je netrivialna.
+    Naj bo $\F_n = \langle S \rangle$ in preslikava $\phi_s$ kot definirana v zgledu \ref{konstrukcija-stene} za vsak $s \in S$. Podgrupa $\bigcap_{s \in S} \ker \phi_s$ je netrivialna.
 \end{izrek}
 
 
 \begin{proof}
     Pričnimo s primerom za $n = 2$. Naj bosta $x, y$ generatorja $\F_2$. Označimo komutator $[x, y] = xyx^{-1}y^{-1}$. Ker $\F_n$ ni komutativna, velja $[x, y] \neq e$. Opazimo, da sta $\phi_x([x, y]), \phi_y([x, y]) = e$, torej je $\ker \phi_x \cap \ker \phi_y$ netrivialna.
 
-    V splošnem naj bodo $x_i$ generatorji $\F_n$. Induktivno definiramo $S_1 = x_1$ in $S_n = [S_{n - 1}, x_n]$. Nadaljujemo z matematično indukcijo. Denimo, da je $S_p \in \ker \phi_i$ za vsak $i \in \{1, \dots, p\}$. Sledi, da je $\phi_{p + 1}(S_{p + 1}) = S_p S_p^{-1} = e$ in $\phi_i(S_{p + 1}) = x_{p + 1}x_{p + 1}^{-1} = e$ za $i \leq p$. Torej je $S_{p + 1} \in \bigcap_{i \leq p} \ker \phi_i$, kot želeno. Po indukciji sledi, da je $S_n \in \bigcap_{s \in S} \ker \phi_s$ kot zahtevano.
+    V splošnem naj bodo $x_i$ generatorji $\F_n$. Induktivno definiramo $S_1 = x_1$ in $S_n = [S_{n - 1}, x_n]$. Nadaljujemo z matematično indukcijo. Primer za $p = 1$ velja trivialno. Za indukcijski korak denimo, da je $S_p \in \ker \phi_i$ za vsak $i \leq p$. Sledi, da je $\phi_{p + 1}(S_{p + 1}) = S_p S_p^{-1} = e$, saj $S_p$ ne vsebuje elementa $x_{p + 1}$, in $\phi_i(S_{p + 1}) = x_{p + 1}x_{p + 1}^{-1} = e$ za vsak $i \leq p$. Torej je $S_{p + 1} \in \bigcap_{i \leq p + 1} \ker \phi_i$, kot želeno.
+
+    Sledi, da je $S_n \in \bigcap_{s \in S} \ker \phi_s$ kot zahtevano.
 \end{proof}
 
 
