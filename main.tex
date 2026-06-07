@@ -62,7 +62,7 @@ Za začetek se spomnimo nekaj klasičnih definicij s področja splošne topologi
 \end{definicija}
 
 
-V prihodnje se ukvarjamo predvsem z zankami, kljub temu pa vseeno večino trditev dokažemo v splošnem, saj nam to nam to dokazov ne oteži.
+V prihodnje se ukvarjamo predvsem z zankami, kljub temu pa vseeno večino trditev dokažemo v splošnem, saj nam to dokazov ne oteži.
 
 Nadaljujemo z nekaj operacijami.
 
@@ -115,7 +115,7 @@ Ker konstantne poti igrajo pomembno vlogo v izpeljavi, jih označujemo kar s to�
 \section{Homotopija}
 
 
-Homotopija je eno najpomembnejših orodij algebraične topologije. Poleg tega, da igra pomembno vlogo pri konstrukciji homoloških grup, lahko z njo opišemo tudi mnoge druge homotopske invariante. Tukaj je ne razvijemo v vsej njeni kompleksnosti, saj za konstrukcijo fundamentalne grupe potrebujemo le najosnovnejše definicije.
+Homotopija je eno najpomembnejših orodij algebraične topologije. Poleg tega, da igra pomembno vlogo pri konstrukciji homotopskih in homoloških grup, lahko z njo opišemo tudi mnoge druge homotopske invariante. Tukaj je ne razvijemo v vsej njeni kompleksnosti, saj za konstrukcijo fundamentalne grupe potrebujemo le najosnovnejše definicije.
 
 
 \begin{definicija}
@@ -125,9 +125,9 @@ Homotopija je eno najpomembnejših orodij algebraične topologije. Poleg tega, d
 \end{definicija}
 
 
-Homotopijo si najlažje predstavljamo kot zvezno transformacijo slike ene preslikave v drugo. To pomeni, da ni važno le, kako vsaka slika izgleda, temveč tudi, kje se nahaja. Kot primer si poglejmo kanonični inkluziji $\phi, \psi : \B^n \to \B^n \amalg \B^n$, kjer $\phi$ slika v prvo, $\psi$ pa v drugo kopijo $\B^n$. Kljub temu, da se preslikavi zdita skoraj popolnoma enaki, pa še vseeno nista homotopni, saj nobene izmed žog ne moremo potisniti v drugo brez nenadnega skoka.
+Homotopijo si najlažje predstavljamo kot zvezno transformacijo slike ene preslikave v drugo skozi topološki prostor. To pomeni, da ni važno le, kako vsaka slika izgleda, temveč tudi, kje se nahaja. Kot primer si poglejmo kanonični inkluziji $\phi, \psi : \B^n \to \B^n \amalg \B^n$, kjer $\phi$ slika v prvo, $\psi$ pa v drugo kopijo $\B^n$. Kljub temu, da se preslikavi zdita skoraj popolnoma enaki, pa še vseeno nista homotopni, saj nobene izmed žog ne moremo potisniti v drugo brez nenadnega skoka.
 
-Posebej zanimiva pa je tudi sledeča ekvivalentna definicija homotopnosti, saj na zelo preprost način opiše našo intuitivno predstavo o transformaciji slik v kodomeni. Podamo jo brez dokaza, vendar si ga bralka lahko prebere v \cite{topologie-algebrique}. Kljub njeni lepoti jo vključimo predvsem za to, ker nam precej poenostavi dokaze nekaterih trditev.
+Posebej zanimiva pa je tudi sledeča ekvivalentna definicija homotopnosti, saj na zelo preprost način opiše našo intuitivno predstavo o transformaciji slik v kodomeni. Podamo jo brez dokaza, vendar si ga bralka lahko prebere v \cite{topologie-algebrique}. Kljub njeni lepoti jo vključimo predvsem, ker nam precej poenostavi dokaze nekaterih trditev.
 
 
 \begin{trditev}
@@ -150,7 +150,7 @@ Kot si za relacije zelo pogosto želimo, je tudi homotopnost ekvivalenčna.
 \end{proof}
 
 
-Saj nas zanimajo predvsem poti, nas te popolnoma splošne definicije lahko pripeljejo le tako daleč. S tem v mislih moramo definicijo homotopnosti rahlo posplošiti, da bo primerna tudi za homotopnost poti. Problem namreč nastane s potmi v povezanih prostorih, saj so v njih vse homotopne. Recimo, da je $X$ povezan s potmi in $\alpha, \beta$ poti v $X$. Ker obstaja neka pot $\sigma$ od $\alpha(1)$ do $\beta(0)$, lahko homotopijo med njima konstuiramo tako, da pot $\alpha$ po tirnici $\sigma$ preprosto povlečemo na mesto poti $\beta$.
+Saj nas zanimajo predvsem poti, nas te popolnoma splošne definicije lahko pripeljejo le tako daleč. S tem v mislih si moramo ogledati rahlo bolj specializirano definicijo homotopnosti, ki je primernejša za obravnavo homotopnosti poti. Problem namreč nastane v s potmi povezanih prostorih, saj so v njih vse poti homotopne. Recimo, da je $X$ povezan s potmi in $\alpha, \beta$ poti v $X$. Ker obstaja neka pot $\sigma$ od $\alpha(1)$ do $\beta(0)$, lahko homotopijo med njima konstuiramo, tako da pot $\alpha$ po tirnici $\sigma$ preprosto povlečemo na mesto poti $\beta$.
 
 Opisanemu problemu se zato izognemo s sledečo definicijo.
 
@@ -169,7 +169,7 @@ S tem, da se omejimo na homotopije, ki krajišča poti ohranjajo primrznjena, ta
 
 
 \begin{zgled}
-    Poglejmo si tri poti v podprostoru ravnine, kot kaže slika \ref{homotopija-poti}. Ni se težko prepričati, da sta poti $\alpha$ in $\beta$ homotopni, saj si lahko predstavljamo, kako bi ena zdrsela v drugo, kot bi jo s prstom potisnili v željeni položaj. Po drugi strani pa nobena izmed $\alpha$ in $\beta$ ni homtopna $\gamma$. Razlog je luknja v sredini prostora, ki preprečuje katerikoli od njiju zlesti na mesto poti $\gamma$. Da bi to dosegli, bi ju morali ali pretrgati ali pa v procesu transformacije začasno premakniti eno od krajišč, oba ta primera pa sta po definiciji homotopnosti poti nemogoča.
+    Poglejmo si tri poti v podprostoru ravnine, kot kaže slika \ref{homotopija-poti}. Ni se težko prepričati, da sta poti $\alpha$ in $\beta$ homotopni, saj si lahko predstavljamo, kako bi ena zdrsela v drugo, kot bi jo s prstom potisnili v želeni položaj. Po drugi strani pa nobena izmed $\alpha$ in $\beta$ ni homtopna $\gamma$. Razlog je luknja v sredini prostora, ki preprečuje katerikoli od njiju zlesti na mesto poti $\gamma$. Da bi to dosegli, bi ju morali ali pretrgati ali pa v procesu transformacije začasno premakniti eno od krajišč, oba ta primera pa sta po definiciji homotopnosti poti nemogoča.
 
     \begin{figure}[H]
         \centering
@@ -178,7 +178,7 @@ S tem, da se omejimo na homotopije, ki krajišča poti ohranjajo primrznjena, ta
         \label{homotopija-poti}
     \end{figure}
 
-    Podobno sta si zanki $\alpha\gamma^{-1}$ in $\beta\gamma^{-1}$ homotopni, medtem ko si zanki $\alpha\beta^{-1}$ in $\alpha\gamma^{-1}$ nista. Razlog spet leži v luknji sredi prostora, saj le-ta zanki $\alpha\gamma^{-1}$ preprečuje, da bi se lahko zategnila v konstantno pot, zanka $\alpha\beta^{-1}$ pa nima nobene takšne omejitve.
+    Podobno sta si zanki $\alpha\gamma^{-1}$ in $\beta\gamma^{-1}$ homotopni, medtem ko si zanki $\alpha\beta^{-1}$ in $\alpha\gamma^{-1}$ nista. Razlog spet leži v luknji sredi prostora, saj le-ta zanki $\alpha\gamma^{-1}$ preprečuje, da bi se lahko zategnila v konstantno pot, zanka $\alpha\beta^{-1}$ pa nima takšne omejitve.
 \end{zgled}
 
 
@@ -226,7 +226,7 @@ Vse te leme in definicije pa nas le pripeljejo do velikega izreka (velik je rela
 
 
 \begin{proof}
-    Sledi trivialno po lemah \ref{lastnosti-grupe} in \ref{stik-poti-homotopen}.
+    Sledi trivialno po lemah \ref{stik-poti-homotopen} in \ref{lastnosti-grupe}.
 \end{proof}
 
 
@@ -238,11 +238,11 @@ In tako lahko končno definiramo.
 \end{definicija}
 
 
-Preden se lotimo modeliranja, pa bi si bilo dobro dobiti še malo občutka za pravkar definirano strukturo. Pa si poglejmo še nekaj primerov fundamentalnih grup, ki pripadajo klasičnim mnogoterostim.
+Preden se lotimo modeliranja, bi si bilo dobro dobiti še malo občutka za pravkar definirano strukturo. Pa si poglejmo še nekaj primerov fundamentalnih grup, ki pripadajo klasičnim mnogoterostim.
 
 
 \begin{zgled}
-    Fundamentalna grupa $\S^2$ je trivialna. Predstavljajmo si eno tistih žogic iz gumic. Gumico na površini lahko vedno vzamemo dol iz žogice, pri čemer je naprej napeta, potem pa se v procesu odstranjevanja počasi sprošča ob površini žoge, dokler se popolnoma ne sprosti in sama pade dol iz kugle.
+    Fundamentalna grupa $\S^2$ je trivialna. Predstavljajmo si eno tistih žogic iz gumic. Gumico na površini lahko vedno vzamemo dol iz žogice, pri čemer je naprej napeta, potem pa se v procesu odstranjevanja počasi sprošča ob površini žoge, dokler se na neki točki popolnoma ne sprosti in sama pade dol iz kugle.
 
     Bolj matematično naj bo $\alpha$ neka zanka v $x \in \S^2$ in $y \in \S^2 \setminus \im \alpha$ neka točka. Predstavljajmo si, da sfero predremo tj. odstranimo $y$. Dobro znano je, da je $\S^2 \setminus \{y\} \approx \B^2$, naj bo $\phi : \S^2 \setminus \{y\} \to \B^2$ ta homeomorfizem. Predpostavimo lahko, da je $\phi(x) = 0$. Poleg tega je dokaj očitno, da velja $\id : \B^2 \to \B^2 \simeq \B^2 \to \B^2, s \mapsto 0$, tedaj homotopijo med njima označimo z $\psi$. Sedaj lahko definiramo preslikavo $h : \I^2 \to \S^2$ s predpisom $(s, t) \mapsto \phi^{-1}(\psi((\phi \circ \alpha)(s), t))$, ki očitno tvori homotopijo med $\alpha$ in $x$.
 \end{zgled}
@@ -252,16 +252,16 @@ Sedaj pa si poglejmo še nekoliko bolj zapleten prostor, saj nas že dobro daje 
 
 
 \begin{zgled}
-    Panima nas, kaj je fundamentalna grupa mnogoterosti $\T^2$. Naj bo $x \in \T^2$. Izgleda, kot da ima $\pi_1(\T^2, x)$ natanko dva generatorja — zanko, ki gre po obodu luknje, in zanko, ki obkroži biskvit, kot kaže slika \ref{krof} —, poleg tega pa noben izmed njiju ni nilpotenten, torej bo $\pi_1(\T^2, x)$ neskončna. Preverimo, ali je komutativna tj. ali je izomorfna $\Z^2$.
+    Zanima nas, kaj je fundamentalna grupa mnogoterosti $\T^2$. Naj bo $x \in \T^2$. Izgleda, kot da ima $\pi_1(\T^2, x)$ natanko dva generatorja — zanko, ki gre po obodu luknje, in zanko, ki obkroži biskvit, kot kaže slika \ref{krof} —, poleg tega pa noben izmed njiju ni nilpotenten, torej bo $\pi_1(\T^2, x)$ sigurno neskončna. Preverimo, ali je komutativna tj. ali je izomorfna $\Z^2$.
 
     \begin{figure}[H]
         \centering
         \input{img/krof.tex}
-        \caption{Generatorja fundamentalne grupe prostora $T^2$.}
+        \caption{Generatorja fundamentalne grupe prostora $\T^2$.}
         \label{krof}
     \end{figure}
 
-    Naj bosta $\alpha, \beta$ generatorja $\pi_1(\T^2, x)$. Če si torus predstavljamo kot kvocient $\I^2$, je lahko videti, da velja $\alpha\beta \simeq \beta\alpha$, saj, če dobljeno zanko primemo, ko se ponovno vrne v $x$, in jo povlečemo skozi kot $\I^2$, se zaradi topologije torusa spet pojavi v nasprotnem. Iz tega sledi, da je fundamentalna grupa torusa komutativna, od tod pa lahko zaključimo, da velja $\pi_1(\T^2, x) \cong \Z^2$.
+    Naj bosta $\alpha, \beta$ generatorja $\pi_1(\T^2, x)$. Če si torus predstavljamo kot kvocient $\I^2$, je lahko videti, da velja $\alpha\beta \simeq \beta\alpha$, saj, če dobljeno zanko primemo, ko se ponovno vrne v $x$, in jo povlečemo skozi kot $\I^2$, se zaradi ekvivalenčne relacija spet pojavi v nasprotnem. Iz tega sledi, da je fundamentalna grupa torusa komutativna, od tod pa lahko zaključimo, da velja $\pi_1(\T^2, x) \cong \Z^2$.
 \end{zgled}
 
 
@@ -271,9 +271,9 @@ Sedaj pa si poglejmo še nekoliko bolj zapleten prostor, saj nas že dobro daje 
 Oboroženi z orodji algebraične topologije se le obrnemo proti modeliranju problema.
 
 \begin{zgled}
-    Kot že rečeno, si želimo za model stene uporabiti evklidsko ravnino. Naj bo $x \in \R^2$ in $S \subset \R^2 \setminus \{x\}$, kjer je $|S| = n$ za nek $n \in \N$. Izbrana točka $x$ nam bo služila kot mesto, na katerem je vrvica pritrjena na sliko, elementi $S$ predstavljajo vsak enega izmed žebljev zabitih v steno, za vrv pa bomo uporabili kar ekvivalenčni razred poti v prostoru glede na relacijo homotopnosti, kot že motivirano. S tako nastavljenim modelom je jasno, da bo slika padla, natanko takrat, ko bo naša vrv enaka ekvivalenčnemu razredu $[x]$, saj se takrat vrvica ni zataknila ob nobenega izmed žebljev. Torej našo steno opisuje grupa $G = \pi_1(\R^2 \setminus S)$.
+    Kot že rečeno, si želimo za model stene uporabiti evklidsko ravnino. Naj bo $x \in \R^2$ in $S \subset \R^2 \setminus \{x\}$, kjer je $|S| = n$ za nek $n \in \N$. Izbrana točka $x$ nam bo služila kot mesto, na katerem je vrvica pritrjena na sliko, elementi $S$ predstavljajo vsak enega izmed žebljev zabitih v steno, za vrv pa bomo uporabili kar ekvivalenčni razred poti v prostoru glede na relacijo homotopnosti, kot že motivirano. S tako nastavljenim modelom je jasno, da bo slika padla, natanko takrat, ko bo naša vrv enaka ekvivalenčnemu razredu $[x]$, saj se takrat vrvica ni zataknila ob nobenega izmed žebljev. Torej našo steno opisuje grupa $G = \pi_1(\R^2 \setminus S, x)$.
 
-    Grupa $G$ mora za vsak $s \in S$ vsebovati ekvivalenčni razred vseh zank, ki potujejo okoli $s$ natanko enkrat in ne obrokožijo nobenega drugega elementa. Taka ekvivalenčna razreda sta dva tj. naj bo $\alpha$ zanka kot zahtevano, potem sta $[\alpha]$ in $[\alpha^{-1}]$ iskana razreda. S preprostostjo v mislih ju označujemo kar s $s$ in $s^{-1}$. Vidimo, da je vsak element v $G$ možno napisati kot produkt teh osnovnih komponent. Sledi, da je $G = \{\prod_i a_i : a_i \in \bigcup_{s \in S} \{s, s^{-1} \} \}$. Intuitivno smo vsako možno navijanje vrvi zapisali s koraki, ki smo jih naredili, da smo ga ustvarili. Pokazali smo, da je lahko $G$ zapišemo kot množico vseh besed v $S$. Drugače rečeno velja $G \cong \F_n$.
+    Grupa $G$ mora za vsak $s \in S$ vsebovati ekvivalenčni razred vseh zank, ki potujejo okoli $s$ natanko enkrat in ne obrokožijo nobenega drugega elementa. Taka ekvivalenčna razreda sta dva tj. naj bo $\alpha$ zanka kot zahtevano, potem sta $[\alpha]$ in $[\alpha^{-1}]$ iskana razreda. S preprostostjo v mislih ju označujemo kar s $s$ in $s^{-1}$. Vidimo, da je vsak element v $G$ možno napisati kot produkt teh osnovnih komponent. Sledi, da je $G = \{\prod_i a_i : a_i \in \bigcup_{s \in S} \{s, s^{-1} \} \}$. Intuitivno smo vsako možno navijanje vrvi zapisali s koraki, ki smo jih naredili, da smo ga ustvarili. Pokazali smo, da je možno $G$ zapisati kot množico vseh besed v $S$. Drugače rečeno velja $G \cong \F_n$.
 
     Preostane nam še opis odstranjevanja enega izmed žebljev. Naj bo $\alpha$ pot, ki potuje okoli točke $s \in S$ in nobene druge. Odstraniti žebelj pomeni odstraniti oviro — v našem primeru to pomeni zapolniti točko $s$, nakar bo $\alpha \simeq x$, torej bo slika padla. Ni nujno, da bo $\alpha$ vedno tako preprosta, po principu odstranjevanja ovire pa si še vedno želimo, da je po transformaciji prostora homotopna $x$.
 
