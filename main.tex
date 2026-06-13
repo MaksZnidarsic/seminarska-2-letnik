@@ -26,10 +26,6 @@
 
 Pokažemo pristop k konstrukciji \textit{prve homotopske grupe} skozi njeno kozmetično podobnost problemu obešanja slike (ang. picture hanging puzzle). Definicije in splošne izreke algebraične topologije povzamemo iz \cite{topologie-algebrique}, formulacija in rešitev problema pa sta predstavljeni v \cite{picture-hanging-puzzles}.
 
-
-\section{Obesiti sliko}
-
-
 Problem si zastavimo takole: imamo sliko pritrjeno na sklenjeno vrvico, nekaj žebljev in prazno steno. Sliko z uporabo vrvice in žebljev pritrdimo na steno, kot kaže slika \ref{mucka}. \textit{Izziv je vrvico napeljati, tako da, ko iz stene odstranimo kateregakoli izmed žebljev, slika pade.}
 
 \begin{figure}[H]
@@ -47,7 +43,7 @@ V tem prispevku to naredimo preko fundamentalne grupe $n$-krat preluknjane evkli
 
 Za nas bo to prišlo v poštev pri matematičnem modelu problema, saj, če si našo steno zamislimo kot evklidsko ravnino in vsako vrzel, ki smo jo v njej ustvarili, kot enega izmed žebljev, naš problem opiše ravno to, kje se zanke — torej različna navijanja vrvi okoli žebljev — zataknejo.
 
-Za matematično analizo privzamemo naslednje splošne oznake: z $\N$ označujemo množico naravnih, z $\Z$ množico celih in z $\R$ množico realnih števil, z $\I$ označujemo enotski interval, z $\B^n$ $n$-kroglo, s $\S^n$ $n$-sfero in s $\T^n$ $n$-torus. Poleg tega s $\F_n$ označimo prosto grupo reda $n$.
+Za matematično analizo privzamemo naslednje splošne oznake: z $\N$ označujemo množico naravnih, z $\Z$ množico celih in z $\R$ množico realnih števil, z $\I$ označujemo enotski interval, z $\B^n$ odprto $n$-kroglo, s $\S^n$ $n$-sfero in s $\T^n$ $n$-torus. Poleg tega s $\F_n$ označimo prosto grupo ranga $n$.
 
 \section{Poti v prostoru}
 
@@ -58,7 +54,7 @@ Za začetek se spomnimo nekaj klasičnih definicij s področja splošne topologi
 \begin{definicija}
     Naj bo $X$ topološki prostor. Zvezna preslikava $\alpha : \I \to X$ je \textit{pot} v $X$. Element $x = \alpha(0)$ imenujemo \textit{začetna točka}, element $y = \alpha(1)$ pa \textit{končna točka} poti $\alpha$. Tedaj pravimo, da je $\alpha$ pot od $x$ do $y$.
 
-    Poti $\alpha$ v $X$ s staknjenima krajiščema pravimo \textit{zanka v točki} $x = \alpha(0) = \alpha(1)$. Z $Z(X, x)$ označimo \textit{množico vseh zank v točki} $x$.
+    Poti $\alpha$ v $X$ s staknjenima krajiščema pravimo \textit{zanka v točki} $x = \alpha(0) = \alpha(1)$. Z $Z(X, x)$ označimo \textit{množico vseh zank v} $x$.
 \end{definicija}
 
 
@@ -81,20 +77,6 @@ Nadaljujemo z nekaj operacijami.
 
 
 Tukaj je vredno omeniti, da je stik zank spet zanka, saj je to pomembno v nadaljevanju.
-
-Naslednja trditev nam zagotovi, da je stik poti dobro definiran.
-
-
-\begin{trditev}
-    Naj bodo $x, y, z \in X$ in $\alpha$ od $x$ do $y$ in $\beta$ od $y$ do $z$ poti v $X$. Tedaj je $\alpha\beta$ pot v $X$ od $x$ do $z$.
-    \label{prop:produkt-poti-pot}
-\end{trditev}
-
-
-\begin{proof}
-    Preprost z uporabo elementarnih izrekov s področja splošne topologije.
-\end{proof}
-
 
 Poleg tega pa potrebujemo tudi sledečo involucijo.
 
@@ -127,15 +109,6 @@ Homotopija je eno najpomembnejših orodij algebraične topologije. Poleg tega, d
 
 Homotopijo si najlažje predstavljamo kot zvezno transformacijo slike ene preslikave v drugo skozi topološki prostor. To pomeni, da ni važno le, kako vsaka slika izgleda, temveč tudi, kje se nahaja. Kot primer si poglejmo kanonični inkluziji $\phi, \psi : \B^n \to \B^n \amalg \B^n$, kjer $\phi$ slika v prvo, $\psi$ pa v drugo kopijo $\B^n$. Kljub temu, da se preslikavi zdita skoraj popolnoma enaki, pa še vseeno nista homotopni, saj nobene izmed žog ne moremo potisniti v drugo brez nenadnega skoka.
 
-Posebej zanimiva pa je tudi sledeča ekvivalentna definicija homotopnosti, saj na zelo preprost način opiše našo intuitivno predstavo o transformaciji slik v kodomeni. Podamo jo brez dokaza, vendar si ga bralka lahko prebere v \cite{topologie-algebrique}. Kljub njeni lepoti jo vključimo predvsem, ker nam precej poenostavi dokaze nekaterih trditev.
-
-
-\begin{trditev}
-    Naj bosta $\phi, \psi : X \to Y$ zvezni. Preslikavi $\phi$ in $\psi$ sta homotopni natanko tedaj, ko obstaja pot med $\phi$ in $\psi$ v $\C(X, Y)$.
-    \label{prop:homotopija-pot-v-zveznih-funkcijah}
-\end{trditev}
-
-
 Kot si za relacije zelo pogosto želimo, je tudi homotopnost ekvivalenčna.
 
 
@@ -146,11 +119,19 @@ Kot si za relacije zelo pogosto želimo, je tudi homotopnost ekvivalenčna.
 
 
 \begin{proof}
-    Naj bodo $\phi, \psi, \sigma : X \to Y$ zvezne. Očitno velja $\phi \simeq \phi$. Naj bo $\alpha$ pot od $\phi$ do $\psi$ v $\C(X, Y)$, $\alpha^{-1}$ je pot od $\psi$ do $\phi$. Nazadnje naj bo $\alpha$ pot od $\phi$ do $\psi$ in $\beta$ pot od $\psi$ do $\sigma$, potem je $\alpha\beta$ po trditvi \ref{prop:produkt-poti-pot} pot od $\phi$ do $\sigma$, torej sta homotopni po trditvi \ref{prop:homotopija-pot-v-zveznih-funkcijah}.
+    Naj bodo $\phi, \psi, \sigma : X \to Y$ zvezne. Očitno velja $\phi \simeq \phi$. Naj bo $h$ homotopija med $\phi$ in $\psi$. Tedaj je preslikava $(x, y) \mapsto h(x, 1 - y)$ homotopija med $\psi$ in $\phi$. Nazadnje naj bo $h$ kot prej in $h'$ homotopija med $\psi$ in $\sigma$. Preslikava definirana s
+    \begin{align*}
+        (x, y) \mapsto
+        \begin{cases}
+            h(x, 2y) & (y \in [0, 1/2]) \\
+            h'(x, 2y - 1) & (y \in [1/2, 1])
+        \end{cases}
+    \end{align*}
+    tvori homotopijo med $\phi$ in $\sigma$.
 \end{proof}
 
 
-Saj nas zanimajo predvsem poti, nas te popolnoma splošne definicije lahko pripeljejo le tako daleč. S tem v mislih si moramo ogledati rahlo bolj specializirano definicijo homotopnosti, ki je primernejša za obravnavo homotopnosti poti. Problem namreč nastane v s potmi povezanih prostorih, saj so v njih vse poti homotopne. Recimo, da je $X$ povezan s potmi in $\alpha, \beta$ poti v $X$. Ker obstaja neka pot $\sigma$ od $\alpha(1)$ do $\beta(0)$, lahko homotopijo med njima konstuiramo, tako da pot $\alpha$ po tirnici $\sigma$ preprosto povlečemo na mesto poti $\beta$.
+Saj se želimo ukvarjati predvsem s potmi, moramo definicijo homotopnosti rahlo prilagoditi. Problem z zdajšno namreč nastane v s potmi povezanih prostorih, saj so v njih vse poti homotopne. Recimo, da je $X$ povezan s potmi in $\alpha, \beta$ poti v $X$. Ker obstaja neka pot $\sigma$ od $\alpha(1)$ do $\beta(0)$, lahko homotopijo med njima konstuiramo, tako da pot $\alpha$ po tiru $\sigma$ preprosto povlečemo na mesto poti $\beta$.
 
 Opisanemu problemu se zato izognemo s sledečo definicijo.
 
@@ -169,7 +150,7 @@ S tem, da se omejimo na homotopije, ki krajišča poti ohranjajo primrznjena, ta
 
 
 \begin{zgled}
-    Poglejmo si tri poti v podprostoru ravnine, kot kaže slika \ref{homotopija-poti}. Ni se težko prepričati, da sta poti $\alpha$ in $\beta$ homotopni, saj si lahko predstavljamo, kako bi ena zdrsela v drugo, kot bi jo s prstom potisnili v želeni položaj. Po drugi strani pa nobena izmed $\alpha$ in $\beta$ ni homtopna $\gamma$. Razlog je luknja v sredini prostora, ki preprečuje katerikoli od njiju zlesti na mesto poti $\gamma$. Da bi to dosegli, bi ju morali ali pretrgati ali pa v procesu transformacije začasno premakniti eno od krajišč, oba ta primera pa sta po definiciji homotopnosti poti nemogoča.
+    Poglejmo si tri poti v podprostoru ravnine, kot kaže slika \ref{homotopija-poti}. Ni se težko prepričati, da sta poti $\alpha$ in $\beta$ homotopni, saj si lahko predstavljamo, kako bi ena zdrsela v drugo, kot bi jo s prstom potisnili v želeni položaj. Po drugi strani pa nobena izmed $\alpha$ in $\beta$ ni homotopna $\gamma$. Razlog je luknja v sredini prostora, ki preprečuje katerikoli od njiju zlesti na mesto poti $\gamma$. Da bi to dosegli, bi ju morali ali pretrgati ali pa v procesu transformacije začasno premakniti eno od krajišč, oba ta primera pa sta po definiciji homotopnosti poti nemogoča.
 
     \begin{figure}[H]
         \centering
@@ -179,13 +160,14 @@ S tem, da se omejimo na homotopije, ki krajišča poti ohranjajo primrznjena, ta
     \end{figure}
 
     Podobno sta si zanki $\alpha\gamma^{-1}$ in $\beta\gamma^{-1}$ homotopni, medtem ko si zanki $\alpha\beta^{-1}$ in $\alpha\gamma^{-1}$ nista. Razlog spet leži v luknji sredi prostora, saj le-ta zanki $\alpha\gamma^{-1}$ preprečuje, da bi se lahko zategnila v konstantno pot, zanka $\alpha\beta^{-1}$ pa nima takšne omejitve.
+    \label{homotopija-poti-v-podprostoru-R2}
 \end{zgled}
 
 
 \section{Fundamentalna grupa}
 
 
-Sedaj, ko smo se seznanili z osnovami homotopije poti, pa nadaljujemo k konstrukciji fundamentalne grupe. To tvori prostor ekvivalenčnih razredov zank glede na relacijo homotopnosti opremljen z operacijo stika poti, zato se osredotočimo na nekaj lem, ki to konstrukcijo legitimirajo. Za začetek dokažemo, da je stik poti usklajen s homotopnostjo, kar nam dovoli, da ga podaljšamo tudi na ekvivalenčne razrede.
+Sedaj, ko smo se seznanili z osnovami homotopije poti, pa nadaljujemo h konstrukciji fundamentalne grupe. To tvori prostor ekvivalenčnih razredov zank glede na relacijo homotopnosti opremljen z operacijo stika poti, zato se osredotočimo na nekaj lem, ki to konstrukcijo legitimirajo. Za začetek dokažemo, da je stik poti usklajen s homotopnostjo, kar nam dovoli, da ga podaljšamo tudi na ekvivalenčne razrede.
 
 
 \begin{lema}
@@ -213,11 +195,11 @@ Nadaljujemo z osnovnimi lastnostmi grupe.
 
 
 \begin{proof}
-    Zaradi njune rutinske narave dokaza za \eqref{lastnosti-grupe-1} in \eqref{lastnosti-grupe-2} izpustimo. Za \eqref{lastnosti-grupe-3} naj bo $\alpha$ zanka v $X$. Brez škode splošnosti se lahko omejimo na primer $\alpha\alpha^{-1} \simeq x$. Če si zamislimo, kako $\alpha\alpha^{-1}$ potuje v $X$, hitro opazimo, da kljub temu, da se točke $x$ dotakne vsaj trikrat, je tam fiksirana samo za $0$ in $1$. Tako lahko tisto nevidno zankico, ki nastane pri $1 / 2$, samo vlečemo nazaj po tirnici $\alpha$, dokler se ne vrnemo do točke $x$. V skladu z razmislekom definiramo preslikavo $h : \I^2 \to X, (s, t) \mapsto \alpha(t - t|2s - 1|)$, ki tvori želeno homotopijo.
+    Zaradi njune rutinske narave dokaza za \eqref{lastnosti-grupe-1} in \eqref{lastnosti-grupe-2} izpustimo. Za \eqref{lastnosti-grupe-3} naj bo $\alpha$ zanka v $X$. Brez škode splošnosti se lahko omejimo na primer $\alpha\alpha^{-1} \simeq x$. Če si zamislimo, kako $\alpha\alpha^{-1}$ potuje v $X$, hitro opazimo, da kljub temu, da se točke $x$ dotakne vsaj trikrat, je tam fiksirana samo za $0$ in $1$. Tako lahko tisto nevidno zankico, ki nastane pri $1 / 2$, samo vlečemo nazaj po tiru $\alpha$, dokler se ne vrnemo do točke $x$. V skladu z razmislekom definiramo preslikavo $h : \I^2 \to X, (s, t) \mapsto \alpha(t - t|2s - 1|)$, ki tvori želeno homotopijo.
 \end{proof}
 
 
-Vse te leme in definicije pa nas le pripeljejo do velikega izreka (velik je relativen pojem).
+Vse te leme in definicije pa nas le pripeljejo do velikega izreka (relativno).
 
 
 \begin{izrek}
@@ -242,17 +224,47 @@ Preden se lotimo modeliranja, bi si bilo dobro dobiti še malo občutka za pravk
 
 
 \begin{zgled}
-    Fundamentalna grupa $\S^2$ je trivialna. Predstavljajmo si eno tistih žogic iz gumic. Gumico na površini lahko vedno vzamemo dol iz žogice, pri čemer je naprej napeta, potem pa se v procesu odstranjevanja počasi sprošča ob površini žoge, dokler se na neki točki popolnoma ne sprosti in sama pade dol iz kugle.
+    Fundamentalna grupa $\S^2$ je trivialna. Predstavljajmo si eno tistih žogic iz gumic. Gumico na površini lahko vedno vzamemo dol iz žogice, pri čemer je naprej napeta, potem pa se v procesu odstranjevanja počasi sprošča ob površini žoge, dokler se na neki točki popolnoma ne sprosti in sama pade dol s kugle.
 
-    Bolj matematično naj bo $\alpha$ neka zanka v $x \in \S^2$ in $y \in \S^2 \setminus \im \alpha$ neka točka. Predstavljajmo si, da sfero predremo tj. odstranimo $y$. Dobro znano je, da je $\S^2 \setminus \{y\} \approx \B^2$, naj bo $\phi : \S^2 \setminus \{y\} \to \B^2$ ta homeomorfizem. Predpostavimo lahko, da je $\phi(x) = 0$. Poleg tega je dokaj očitno, da velja $\id : \B^2 \to \B^2 \simeq \B^2 \to \B^2, s \mapsto 0$, tedaj homotopijo med njima označimo z $\psi$. Sedaj lahko definiramo preslikavo $h : \I^2 \to \S^2$ s predpisom $(s, t) \mapsto \phi^{-1}(\psi((\phi \circ \alpha)(s), t))$, ki očitno tvori homotopijo med $\alpha$ in $x$.
+    Bolj konkretno naj bo $\alpha$ neka zanka v $x \in \S^2$ in predpostavimo, da obstaja neka točka $y \in \S^2 \setminus \im \alpha$. Predstavljajmo si, da sfero predremo tj. odstranimo $y$. Dobro znano je, da je $\S^2 \setminus \{y\} \approx \B^2$, naj bo $\phi : \S^2 \setminus \{y\} \to \B^2$ ta homeomorfizem. Predpostavimo lahko, da je $\phi(x) = 0$. Poleg tega je preslikava $H : \B^2 \times \I \to \B^2, (v, s) \mapsto (1 - s) v$ homotopija med $\id_{\B^2}$ in $\B^2 \mapsto \B^2, v \mapsto 0$. Sedaj lahko definiramo preslikavo $h : \I^2 \to \S^2$ s predpisom $(s, t) \mapsto \phi^{-1}(H((\phi \circ \alpha)(s), t))$, ki tvori homotopijo med $\alpha$ in $x$.
+
+    Denimo, da tak $y$ ne obstaja tj. $\im \alpha = \S^2$. Da bi lahko uporabili predhonji argument, moramo naprej najti neko pot homotopno $\alpha$, ki nam bo to dovolila. Izberimo si zaprto $U \subset \S^2$ homeomorfno disku, za katero velja $x \notin U$. Poglejmo si, kaj naredimo z $\alpha$, ko seka $U$. Naj bo $I_\lambda = [u, v] \subset \I$ tak, da velja $\alpha(u), \alpha(v) \in \partial U$ in $\im \alpha|_{[u, v]} \subseteq U$, in $\partial_\lambda : \I \to \partial U$ pot, za katero velja $\partial_\lambda(0) = \alpha(u)$ in $\partial_\lambda(1) = \alpha(v)$. Poleg tega s $\phi_\lambda$ označimo nek homeomorfizem $\I \to I_\lambda$, za katerega velja $\phi_\lambda(0) = u$ in $\phi_\lambda(1) = v$. Ni se težko prepričati, da je $\alpha|_{[u, v]} \circ \phi_\lambda \simeq \partial_\lambda$ v $U$. Homotopijo med njima označimo s $H_\lambda$.
+
+    Naj bo $\{I_\lambda\}_{\lambda \in \Lambda}$ družina vseh maksimalnih intervalov, kot so opisani zgoraj, $\{\partial_\lambda\}_{\lambda \in \Lambda}$ njim pripadajoče poti in $\{\phi_\lambda\}_{\lambda \in \Lambda}$ homeomorfizmi. Pot $\sigma : \I \to \S^2$ definiramo s predpisom $\sigma(t) = \partial_\lambda(t)$, ko je $t \in I_\lambda$, in $\sigma(t) = \alpha(t)$ sicer. Preslikava $h : \I^2 \to \S^2$, ki jo definiramo s predpisom $h(s, t) = H_\lambda(\phi_\lambda^{-1}(s), t)$ za $s \in I_\lambda$ in $h(s, t) = \alpha(s)$ sicer, je homotopija med $\alpha$ in $\sigma$.
+
+    Pot $\sigma$ je bila konstruirana tako, da smo $\alpha$ preprosto odstranili iz $\interior U$. Ker pa $\interior U \neq \emptyset$, si lahko izberemo nek $y \notin \im\sigma$, zato je $\sigma \simeq x$, posledično pa velja tudi $\alpha \simeq x$.
+    \label{fundamentalna-grupa-S2}
 \end{zgled}
 
 
-Sedaj pa si poglejmo še nekoliko bolj zapleten prostor, saj nas že dobro daje lakota.
+Pri prejšnjem zgledu je vredno omeniti, da je celotno konstrukcijo ostala neodvisna od izbire bazne točke, posledično pa je potem taka tudi $\pi_1(\S^2)$. Ta lastnost pa ni edinstvena $\S^2$, temveč velja za vse s potmi povezane topološke prostore.
+
+
+\begin{trditev}
+    Naj bo $X$ povezan s potmi in $x, y \in X$. Tedaj velja $\pi_1(X, x) \cong \pi_1(X, y)$.
+\end{trditev}
+
+
+\begin{proof}
+    Naj bo $\sigma$ pot od $x$ do $y$ v $X$. Poglejmo si preslikavo $\phi : \pi_1(X, x) \to \pi_1(X, y), [\alpha] \mapsto [\sigma^{-1}\alpha\sigma]$. Ni težko preveriti, da je $\phi$ homomorfizem. Tako nam ostane le še bijektivnost. Definirajmo $\psi : \pi_1(X, y) \to \pi_1(X, x), [\alpha] \mapsto [\sigma\alpha\sigma^{-1}]$. Velja $\psi \circ \phi = \id$ in $\phi \circ \psi = \id$, torej je $\phi$ bijekcija.
+\end{proof}
+
+
+\begin{opomba}
+    V primeru, da ni odvisna od izbire bazne točke, fundamentalno grupo prostora $X$ označujemo kar $\pi_1(X, x)$. To ne pomeni nujno, da je $X$ povezan s potmi. Kot primer si lahko vzamemo $\pi_1(\B^n \coprod \B^n)$.
+\end{opomba}
 
 
 \begin{zgled}
-    Zanima nas, kaj je fundamentalna grupa mnogoterosti $\T^2$. Naj bo $x \in \T^2$. Izgleda, kot da ima $\pi_1(\T^2, x)$ natanko dva generatorja — zanko, ki gre po obodu luknje, in zanko, ki obkroži biskvit, kot kaže slika \ref{krof} —, poleg tega pa noben izmed njiju ni nilpotenten, torej bo $\pi_1(\T^2, x)$ sigurno neskončna. Preverimo, ali je komutativna tj. ali je izomorfna $\Z^2$.
+    Poglejmo si prostore $\S^1$, $A = \S^1 \times \I$ in $K = \S^1 \times \B^2$. Začnemo s $\S^1$. Naj bo $\alpha : \I \to \S^2$ definirana s predpisom $t \mapsto e^{i2\pi t}$. Hitro opazimo, da velja $\im\alpha = \S^1$. Tako se moramo pri ustvarjanju $\alpha$ homotopnih poti omejiti na premikanje po tiru $\alpha$ tj. $\alpha$ lahko vzdolž njega le raztegujemo in vlečemo. Sledi, da $\alpha$ ne more biti homotopna konstanti, saj se je omejene na svojo tir nikakor ne da pripraviti, da bi preskočila luknjo v $\S^1$. Podobno $\alpha$ ne more biti homotopna $\alpha\alpha$ ali $\alpha^{-1}$. S tem v mislih je jasno, da morajo biti vsi elementi $\pi_1(\S^1)$ oblike $[\alpha^n]$ za nek $n \in \Z$. Od tu naravno sledi $\pi_1(\S^1) \cong \Z$.
+
+    Podobno kot pri $\S^1$ sta tudi $A$ in $K$ generirana z enim elementom. Enako kot prej lahko definiramo $\alpha : \I \to A, \beta : \I \to K$ s predpisom $t \mapsto (e^{i2\pi t}, 0)$, nakar nam bosta $[\alpha]$ in $[\beta]$ služila kot generatorja vsak svoje grupe. Ni pretirano težko videti, da morata biti tudi edina. Kot primer si oglejmo neko poljubno $\gamma = (\gamma_1, \gamma_2)$ v $K$. Naj bo $H$ definirana kot v prvem delu zgleda \ref{fundamentalna-grupa-S2}. Tedaj je $h : \I^2 \to K, (x, y) \mapsto (\gamma_1(x), H(\gamma_2(x), y))$ homotopija med $\gamma$ in $(\gamma_1, 0)$, ki leži na tiru $\beta$, potem smo pa spet na istem, kot če bi imeli le $\S^1$. To pomeni, da velja $\pi_1(\S^1) \cong \pi_1(A) \cong \pi_1(K)$.
+    \label{fundamentalna-grupa-S1}
+\end{zgled}
+
+
+\begin{zgled}
+    Zanima nas, kaj je fundamentalna grupa mnogoterosti $\T^2$. Izgleda, kot da ima $\pi_1(\T^2)$ natanko dva generatorja — zanko, ki gre po obodu luknje, in zanko, ki obkroži biskvit, kot kaže slika \ref{krof} —, poleg tega noben izmed njiju ni končnega reda, torej bo $\pi_1(\T^2)$ sigurno neskončna. Preverimo, ali je komutativna tj. ali je izomorfna $\Z^2$.
 
     \begin{figure}[H]
         \centering
@@ -261,8 +273,21 @@ Sedaj pa si poglejmo še nekoliko bolj zapleten prostor, saj nas že dobro daje 
         \label{krof}
     \end{figure}
 
-    Naj bosta $\alpha, \beta$ generatorja $\pi_1(\T^2, x)$. Če si torus predstavljamo kot kvocient $\I^2$, je lahko videti, da velja $\alpha\beta \simeq \beta\alpha$, saj, če dobljeno zanko primemo, ko se ponovno vrne v $x$, in jo povlečemo skozi kot $\I^2$, se zaradi ekvivalenčne relacija spet pojavi v nasprotnem. Iz tega sledi, da je fundamentalna grupa torusa komutativna, od tod pa lahko zaključimo, da velja $\pi_1(\T^2, x) \cong \Z^2$.
+    Naj bosta $\alpha, \beta$ generatorja $\pi_1(\T^2)$. Če si torus predstavljamo kot kvocient $\I^2$, je lahko videti, da velja $\alpha\beta \simeq \beta\alpha$, saj, če dobljeno zanko primemo, ko se ponovno vrne v $x$, in jo povlečemo skozi kot $\I^2$, se zaradi ekvivalenčne relacija spet pojavi v nasprotnem. Iz tega sledi, da je fundamentalna grupa torusa komutativna, od tod pa lahko zaključimo, da velja $\pi_1(\T^2) \cong \Z^2$.
 \end{zgled}
+
+
+Množico $\T^n$ se pogosto definira kar kot produkt $(\S^1)^n$. Pravkar smo pokazali, da velja $\pi_1(\S^1 \times \S^1) = \Z^2$, vendar, ker velja $\pi_1(\S^1) = \Z$, sledi $\pi_1(\S^1 \times \S^1) \cong \pi_1(\S^1) \times \pi_1(\S^1)$. Poleg tega pa, če se vrnemo k zgledu \ref{fundamentalna-grupa-S1}, opazimo, da spet velja $\pi_1(\S^1 \times \I) \cong \pi_1(\S^1) \times \pi_1(\I) \cong \pi_1(\S^1)$. Isti vzorec opazimo tudi pri $\pi_1(K)$. V vseh teh primerih velja, da je fundamentalna grupa produkta enaka produktu fundamentalnih grup. Izkaže se, da to velja tudi v splošnem.
+
+
+\begin{trditev}
+    Naj bosta $X, Y$ topološka prostora, $x \in X$ in $y \in Y$. Tedaj velja $\pi_1(X \times Y, (x, y)) \cong \pi_1(X, x) \times \pi_1(Y, y)$.
+\end{trditev}
+
+
+\begin{proof}
+    Definiramo preslikavo $\phi : \pi_1(X \times Y, (x, y)) \to \pi_1(X, x) \times \pi_1(Y, y)$ s predpisom $[\alpha] \mapsto ([\pi_X \circ \alpha], [\pi_Y \circ \alpha])$. Dovolj je pokazati, da je $\phi$ injektivna in da sta obe komponenti $\phi = (\phi_X, \phi_Y)$ surjektivna homomorfizma. Brez škode splošnosti se fokusiramo le na $\phi_X$. Izberimo si nek $[\alpha] \in \pi_1(X, x)$, velja $\phi_X([(\alpha, y)]) = [\alpha]$. Poleg tega pa naj bosta tokrat $[\alpha], [\beta] \in \pi_1(X \times Y, (x, y))$. Velja $\phi_X([\alpha\beta]) = [\pi_X \circ \alpha\beta] = [\pi_X \circ \alpha][\pi_X \circ \beta] = \phi_X([\alpha])\phi_X([\beta])$, od koder sledi, da je $\phi_X$ homomorfizem. Preostane nam le še injektivnost. Naj bosta $[\alpha]$ in $[\beta]$ kot prej. Razvijemo $\phi([\alpha]) = \phi([\beta])$ v $([\pi_X \circ \alpha], [\pi_Y \circ \alpha]) = ([\pi_X \circ \beta], [\pi_Y \circ \beta])$, kar jasno implicira $[\alpha] = [\beta]$.
+\end{proof}
 
 
 \section{Obesimo sliko}
@@ -273,7 +298,7 @@ Oboroženi z orodji algebraične topologije se le obrnemo proti modeliranju prob
 \begin{zgled}
     Kot že rečeno, si želimo za model stene uporabiti evklidsko ravnino. Naj bo $x \in \R^2$ in $S \subset \R^2 \setminus \{x\}$, kjer je $|S| = n$ za nek $n \in \N$. Izbrana točka $x$ nam bo služila kot mesto, na katerem je vrvica pritrjena na sliko, elementi $S$ predstavljajo vsak enega izmed žebljev zabitih v steno, za vrv pa bomo uporabili kar ekvivalenčni razred poti v prostoru glede na relacijo homotopnosti, kot že motivirano. S tako nastavljenim modelom je jasno, da bo slika padla, natanko takrat, ko bo naša vrv enaka ekvivalenčnemu razredu $[x]$, saj se takrat vrvica ni zataknila ob nobenega izmed žebljev. Torej našo steno opisuje grupa $G = \pi_1(\R^2 \setminus S, x)$.
 
-    Grupa $G$ mora za vsak $s \in S$ vsebovati ekvivalenčni razred vseh zank, ki potujejo okoli $s$ natanko enkrat in ne obrokožijo nobenega drugega elementa. Taka ekvivalenčna razreda sta dva tj. naj bo $\alpha$ zanka kot zahtevano, potem sta $[\alpha]$ in $[\alpha^{-1}]$ iskana razreda. S preprostostjo v mislih ju označujemo kar s $s$ in $s^{-1}$. Vidimo, da je vsak element v $G$ možno napisati kot produkt teh osnovnih komponent. Sledi, da je $G = \{\prod_i a_i : a_i \in \bigcup_{s \in S} \{s, s^{-1} \} \}$. Intuitivno smo vsako možno navijanje vrvi zapisali s koraki, ki smo jih naredili, da smo ga ustvarili. Pokazali smo, da je možno $G$ zapisati kot množico vseh besed v $S$. Drugače rečeno velja $G \cong \F_n$.
+    Grupa $G$ mora za vsak $s \in S$ vsebovati ekvivalenčni razred vseh zank, ki potujejo okoli $s$ natanko enkrat in ne obkrožijo nobenega drugega elementa. Taka ekvivalenčna razreda sta dva tj. naj bo $\alpha$ zanka kot zahtevano, potem sta $[\alpha]$ in $[\alpha^{-1}]$ iskana razreda. S preprostostjo v mislih ju označujemo kar s $s$ in $s^{-1}$. Vidimo, da je vsak element v $G$ možno napisati kot produkt teh osnovnih komponent. Sledi, da je $G = \{\prod_i a_i : a_i \in \bigcup_{s \in S} \{s, s^{-1} \} \}$. Intuitivno smo vsako možno navijanje vrvi zapisali s koraki, ki smo jih naredili, da smo ga ustvarili. Pokazali smo, da je možno $G$ zapisati kot množico vseh besed v $S$. Drugače rečeno velja $G \cong \F_n$.
 
     Preostane nam še opis odstranjevanja enega izmed žebljev. Naj bo $\alpha$ pot, ki potuje okoli točke $s \in S$ in nobene druge. Odstraniti žebelj pomeni odstraniti oviro — v našem primeru to pomeni zapolniti točko $s$, nakar bo $\alpha \simeq x$, torej bo slika padla. Ni nujno, da bo $\alpha$ vedno tako preprosta, po principu odstranjevanja ovire pa si še vedno želimo, da je po transformaciji prostora homotopna $x$.
 
@@ -287,7 +312,7 @@ Oboroženi z orodji algebraične topologije se le obrnemo proti modeliranju prob
     \end{align*}
     kjer je $e$ identiteta $\F_n$ in $t \in S$. Vsaka izmed preslikav $\phi_s$ opisuje odstranjevanje enega izmed žebljev. Seveda pa je v takem stanju definicija $\phi_s$ zelo pomanjkljiva, saj bi z njo znali operirati le na generatorij. Zato jo za preostale elemente $\F_n$ preprosto podaljšamo s predpisom $\phi_s(\prod_i a_i) = \prod_i \phi_s(a_i)$, kjer so $a_i \in S$. Preslikava $\phi_s$ je očitno homomorfizem grup.
 
-    Preslikave $\phi_s$ so bile konstruirane na način, da se vsa navijanja, ki padejo, ko odstranimo žebelj $s$, nahajajo v podgrupi $\ker \phi_s$. Od tu sledi, da bodo vse rešitve ležale v preseku vseh, saj so to ravno vsa obešanja, ki padejo, ko odstranimo kateregakoli izmed žebljev. Torej je $\bigcap_{s \in S} \ker \phi_s$ množica rešitev problema obešanja slike.
+    Preslikave $\phi_s$ so bile konstruirane na način, da se vsa navijanja, ki padejo, ko odstranimo žebelj $s$, nahajajo v podgrupi $\ker \phi_s$. Od tu sledi, da bodo rešitve ležale v preseku vseh, saj so to ravno vsa obešanja, ki padejo, ko odstranimo kateregakoli izmed žebljev. Torej je $\bigcap_{s \in S} \ker \phi_s$ množica rešitev problema obešanja slike.
     \label{konstrukcija-stene}
 \end{zgled}
 
@@ -303,7 +328,7 @@ Na tej točki pa nam preostane le še dokazati, da te rešitve res obstajajo.
 \begin{proof}
     Pričnimo s primerom za $n = 2$. Naj bosta $x, y$ generatorja $\F_2$. Označimo komutator $[x, y] = xyx^{-1}y^{-1}$. Ker $\F_n$ ni komutativna, velja $[x, y] \neq e$. Opazimo, da sta $\phi_x([x, y]), \phi_y([x, y]) = e$, torej je $\ker \phi_x \cap \ker \phi_y$ netrivialna.
 
-    V splošnem naj bodo $x_i$ generatorji $\F_n$. Induktivno definiramo $S_1 = x_1$ in $S_n = [S_{n - 1}, x_n]$. Nadaljujemo z matematično indukcijo. Primer za $p = 1$ velja trivialno. Za indukcijski korak denimo, da je $S_p \in \ker \phi_i$ za vsak $i \leq p$. Tedaj je $\phi_{p + 1}(S_{p + 1}) = S_p S_p^{-1} = e$, saj $S_p$ ne vsebuje elementa $x_{p + 1}$. Poleg tega pa za vsak $i \leq p$ velja $\phi_i(S_{p + 1}) = x_{p + 1}x_{p + 1}^{-1} = e$. Torej je $S_{p + 1} \in \bigcap_{i \leq p + 1} \ker \phi_i$, kot želeno.
+   V splošnem naj bodo $x_i$ generatorji $\F_n$. Induktivno definiramo $S_1 = x_1$ in $S_p = [S_{p - 1}, x_p]$. Nadaljujemo z matematično indukcijo. Primer za $p = 1$ velja trivialno. Za indukcijski korak denimo, da je $S_p \in \ker \phi_i$ za vsak $i \leq p$. Tedaj je $\phi_{p + 1}(S_{p + 1}) = S_p S_p^{-1} = e$, saj $S_p$ ne vsebuje elementa $x_{p + 1}$. Poleg tega pa za vsak $i \leq p$ velja $\phi_i(S_{p + 1}) = x_{p + 1}x_{p + 1}^{-1} = e$. Torej je $S_{p + 1} \in \bigcap_{i \leq p + 1} \ker \phi_i$, kot želeno.
 
     Sledi, da je $S_n \in \bigcap_{s \in S} \ker \phi_s$ kot zahtevano.
 \end{proof}
